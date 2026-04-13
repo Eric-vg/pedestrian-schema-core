@@ -1,0 +1,1323 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/pedestrian-network.schema.v1_5.schema.json",
+  "title": "Pedestrian Network GeoJSON Schema v1.5",
+  "description": "A GeoJSON-based pedestrian network schema whose core topological structure is organized by Node, Edge, and Zone. The schema also includes an optional ObjectFeature extension layer for non-topological pedestrian-environment assets, as well as footprint-oriented zone types.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "FeatureCollection",
+      "description": "Top-level GeoJSON object type. Must be FeatureCollection."
+    },
+    "schema_name": {
+      "type": "string",
+      "const": "PedestrianNetwork",
+      "description": "Name of the schema used by this dataset."
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name of the pedestrian network dataset."
+    },
+    "network_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier of the pedestrian network dataset."
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Version identifier of this pedestrian network schema."
+    },
+    "dataset_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Version of the dataset."
+    },
+    "creator": {
+      "type": "string",
+      "description": "Creator of the dataset."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Dataset creation time."
+    },
+    "features": {
+      "type": "array",
+      "description": "Array of GeoJSON features representing the pedestrian network. Core topological features are modeled as Node, Edge, and Zone. ObjectFeature may also be included as an auxiliary extension for non-topological objects associated with the pedestrian environment.",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/NodeFeature"
+          },
+          {
+            "$ref": "#/$defs/EdgeFeature"
+          },
+          {
+            "$ref": "#/$defs/ZoneFeature"
+          },
+          {
+            "$ref": "#/$defs/ObjectFeature"
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "type",
+    "schema_name",
+    "network_id",
+    "schema_version",
+    "dataset_version",
+    "features"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "Position": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180,
+          "description": "Longitude in decimal degrees."
+        },
+        {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90,
+          "description": "Latitude in decimal degrees."
+        }
+      ]
+    },
+    "SurfaceType": {
+      "type": "string",
+      "enum": [
+        "concrete",
+        "asphalt",
+        "brick",
+        "tile",
+        "gravel",
+        "metal",
+        "wood",
+        "rubber",
+        "earth",
+        "unknown"
+      ],
+      "description": "Controlled vocabulary for surface material."
+    },
+    "PointGeometry": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "Point"
+        },
+        "coordinates": {
+          "$ref": "#/$defs/Position"
+        }
+      },
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "additionalProperties": false
+    },
+    "LineStringGeometry": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "LineString"
+        },
+        "coordinates": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/Position"
+          }
+        }
+      },
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "additionalProperties": false
+    },
+    "LinearRing": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "$ref": "#/$defs/Position"
+      },
+      "description": "A linear ring for Polygon geometry. In valid GeoJSON practice, the first and last positions should be identical."
+    },
+    "PolygonGeometry": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "Polygon"
+        },
+        "coordinates": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/LinearRing"
+          }
+        }
+      },
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "additionalProperties": false
+    },
+    "CommonProperties": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Dataset-scoped stable identifier of the feature. This identifier should remain stable across dataset version iterations unless the identity of the represented object itself changes."
+        },
+        "feature_role": {
+          "type": "string",
+          "enum": [
+            "Node",
+            "Edge",
+            "Zone",
+            "Object"
+          ],
+          "description": "Structural role of the feature in the schema. Node, Edge, and Zone represent the core pedestrian network structure. Object represents an auxiliary, non-topological extension layer."
+        },
+        "name": {
+          "type": "string",
+          "description": "Human-readable name of the feature."
+        },
+        "level": {
+          "type": "integer",
+          "description": "Vertical level or floor index of the feature."
+        },
+        "indoor": {
+          "type": "boolean",
+          "description": "Whether the feature is located indoors."
+        },
+        "accessible": {
+          "type": "boolean",
+          "description": "Whether the feature is generally accessible for pedestrian use. This field does not necessarily imply wheelchair accessibility."
+        },
+        "source": {
+          "type": "string",
+          "description": "Source of the feature data."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "existing",
+            "planned",
+            "temporary",
+            "closed",
+            "unknown"
+          ],
+          "description": "Lifecycle or availability status of the feature, such as existing, planned, temporary, closed, or unknown."
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence score of the feature data, ranging from 0 to 1."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Additional notes about the feature."
+        }
+      },
+      "required": [
+        "id",
+        "feature_role"
+      ]
+    },
+    "NodePropertiesV2": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/CommonProperties"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^n[0-9]+$",
+              "description": "Unique identifier of the node feature."
+            },
+            "feature_role": {
+              "const": "Node",
+              "description": "Structural role of this feature in the pedestrian network."
+            },
+            "node_type": {
+              "type": "string",
+              "enum": [
+                "intersection",
+                "dead_end",
+                "entrance_node",
+                "curb_ramp_node",
+                "stair_landing",
+                "other"
+              ],
+              "description": "Semantic type of the node. `intersection` should primarily represent ordinary connection nodes among `footpath` and `mixedpath` edges. It should not be broadly generalized to absorb curb-transition roles associated with crossings, which should instead be expressed by `curb_ramp_node` where such transitions are present. `entrance_node` should be understood as the standardized point-level access anchor of an entrance, rather than as a generic node. When both `entrance_node` and the corresponding `entrance` edge are present, the node should by default be derived as the geometric midpoint of that entrance edge for consistent data conversion and unified modeling. When only point-level entrance data is available, `entrance_node` may be used alone. `curb_ramp_node` is primarily intended to represent the key connecting node between a `crossing` and a `footpath` or `mixedpath` where a curb-level ramped transition is present. However, when the available source data is insufficient to stably recover the crossing relationship, but still clearly indicates a curb-level slope transition point, that point may also be conservatively modeled as a `curb_ramp_node`. It should not be interpreted as a generic ramp-related point, but rather as the key point-level expression of a curb-level accessibility transition for which network-connection semantics are the preferred interpretation rather than the only permitted one. `curb_height_cm`, when available, is an important descriptive attribute for this interpretation but is not the sole condition under which the subtype may be used. When the corresponding sloped segment cannot yet be modeled stably as a linear feature, modeling only this node remains appropriate. `other` should be used only when the object clearly belongs to the Node layer but the existing stable node subtypes are still insufficient for accurate classification; it should not be used merely because the data is coarse, incomplete, or for modeling convenience."
+            },
+            "elevation_m": {
+              "type": "number",
+              "description": "Elevation of the node in meters."
+            },
+            "tactile_paving": {
+              "type": "boolean",
+              "description": "Whether tactile paving is present at this node."
+            },
+            "curb_height_cm": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Curb height at the node in centimeters when such information is available. This is a particularly important attribute for nodes representing curb-level transitions, but its absence does not by itself invalidate the interpretation of a node as `curb_ramp_node` when other evidence is sufficient."
+            },
+            "entrance_kind": {
+              "type": "string",
+              "enum": [
+                "building",
+                "station",
+                "facility",
+                "controlled_site",
+                "other"
+              ],
+              "description": "Type of entrance target that this entrance node connects to."
+            },
+            "relative_ramp_endpoint_position": {
+              "type": "string",
+              "enum": [
+                "top",
+                "bottom"
+              ],
+              "description": "Optional supplemental field indicating this node's endpoint position relative to an associated `ramp` or `curbramp` edge. It should be understood as a relational qualifier rather than as part of the node's primary semantic type, and it does not replace `node_type`."
+            },
+            "waiting_time_s": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Estimated pedestrian waiting time at the node in seconds, if relevant."
+            },
+            "has_seating": {
+              "type": "boolean",
+              "description": "Whether seating is available at or near this node."
+            },
+            "has_shelter": {
+              "type": "boolean",
+              "description": "Whether shelter is available at or near this node."
+            },
+            "connected_edge_count": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Number of edges connected to this node."
+            },
+            "signal": {
+              "type": "object",
+              "description": "Grouped signal-related attributes for the node.",
+              "properties": {
+                "button_present": {
+                  "type": "boolean",
+                  "description": "Whether a pedestrian signal request button is present at this node."
+                },
+                "audible": {
+                  "type": "boolean",
+                  "description": "Whether an audible pedestrian signal is available at this node."
+                }
+              },
+              "additionalProperties": false
+            },
+            "landmark_type": {
+              "type": "string",
+              "description": "Optional landmark or reference type associated with the node."
+            }
+          },
+          "required": [
+            "node_type",
+            "connected_edge_count"
+          ]
+        }
+      ]
+    },
+    "EdgePropertiesV2": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/CommonProperties"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^e[0-9]+$",
+              "description": "Unique identifier of the edge feature."
+            },
+            "feature_role": {
+              "const": "Edge",
+              "description": "Structural role of this feature in the pedestrian network."
+            },
+            "edge_type": {
+              "type": "string",
+              "enum": [
+                "footpath",
+                "mixedpath",
+                "crossing",
+                "curb",
+                "curbramp",
+                "entrance",
+                "stair",
+                "escalator",
+                "ramp",
+                "footbridge",
+                "underpass",
+                "moving_walkway",
+                "other"
+              ],
+              "description": "Semantic type of the edge. This schema's edge subtypes are primarily intended for outdoor pedestrian movement and the directly connected semi-outdoor access context. `footpath` represents a pedestrian edge reserved for use by users within the pedestrian system, including general pedestrians and accessibility users. `mixedpath` represents a shared-use movement edge that allows users beyond the pedestrian system itself to share passage. At the zone layer, `shared_space` may be understood as the spatial counterpart to `mixedpath`. The distinction between `footpath` and `mixedpath` is primarily based on permitted use and user class, rather than geometric form. `curb` represents the linear boundary line itself at the sidewalk-roadway interface and should not be interpreted as a general pedestrian movement edge or as the accessibility transition itself; accessibility-transition semantics should instead be carried by `curbramp` or `curb_ramp_node`. `curbramp` represents the traversable linear sloped transition segment itself. It should be modeled as an edge when the data is detailed enough to clearly express that linear ramped segment, and should be understood as a linear reinforcement of the key-point expression provided by `curb_ramp_node`, rather than as a duplicate object. `entrance` represents a short linear traversable opening at the boundary of a building, facility, station, or controlled site. It is the primary line-level expression of an entrance as a boundary access interface, rather than a general pedestrian approach path. When a corresponding `entrance_node` is also present, that node should be understood as the standardized point-level access anchor of the same entrance. `escalator` and `moving_walkway` are retained only for access facilities that directly connect to an outdoor-oriented pedestrian network, and should not be interpreted as general indoor building circulation facilities. `other` should be used only when the object clearly belongs to the Edge layer but the existing stable edge subtypes are still insufficient for accurate classification; it must not be used as a generic fallback to bypass available subtypes."
+            },
+            "u_id": {
+              "type": "string",
+              "pattern": "^n[0-9]+$",
+              "minLength": 1,
+              "description": "Identifier of the start node of the edge."
+            },
+            "v_id": {
+              "type": "string",
+              "pattern": "^n[0-9]+$",
+              "minLength": 1,
+              "description": "Identifier of the end node of the edge."
+            },
+            "length_m": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Length value associated with the edge geometry, in meters. In dataset conversion, this value may be inherited from a trusted source attribute when available, or computed from geometry when such a source value is absent. It is a non-authoritative dataset-level value and may be recomputed during validation or downstream processing."
+            },
+            "width_m": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Usable width of the edge in meters."
+            },
+            "surface": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/SurfaceType"
+                }
+              ],
+              "description": "Surface material of the edge."
+            },
+            "slope_percent": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Absolute longitudinal grade magnitude of the edge in percent. This value is unsigned and does not indicate uphill or downhill direction relative to u_id -> v_id."
+            },
+            "crossfall_percent": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Absolute crossfall magnitude of the edge in percent. This value is unsigned and does not indicate left or right lateral direction."
+            },
+            "step_free": {
+              "type": "boolean",
+              "description": "Whether the edge can be traversed without steps. This does not automatically imply wheelchair accessibility."
+            },
+            "has_handrail": {
+              "type": "boolean",
+              "description": "Whether handrails are present."
+            },
+            "has_tactile_guidance": {
+              "type": "boolean",
+              "description": "Whether tactile guidance is available along the edge."
+            },
+            "has_lighting": {
+              "type": "boolean",
+              "description": "Whether the edge is lit."
+            },
+            "has_cover": {
+              "type": "boolean",
+              "description": "Whether the edge is covered or sheltered."
+            },
+            "wheelchair_accessible": {
+              "type": "boolean",
+              "description": "Whether the edge is considered suitable for wheelchair access based on the available data."
+            },
+            "directionality": {
+              "type": "string",
+              "enum": [
+                "bidirectional",
+                "forward_only",
+                "reverse_only",
+                "unknown"
+              ],
+              "description": "Permitted direction of movement relative to the declared u_id -> v_id orientation."
+            },
+            "traffic_control": {
+              "type": "string",
+              "enum": [
+                "none",
+                "signalized",
+                "unsignalized",
+                "yield",
+                "other"
+              ],
+              "description": "Primary field for describing the control condition of a pedestrian crossing or other relevant edge. This field is also the sole field for expressing whether a crossing is signalized; no separate signalized boolean should be used."
+            },
+            "vertical_clearance_m": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Vertical clearance associated with the edge, if relevant."
+            },
+            "is_grade_separated": {
+              "type": "boolean",
+              "description": "Whether the edge is grade-separated from surface traffic."
+            },
+            "connects_building": {
+              "type": "boolean",
+              "description": "Whether the edge connects directly to a building or enclosed facility."
+            },
+            "access_control": {
+              "type": "string",
+              "enum": [
+                "none",
+                "gate",
+                "ticketed",
+                "staff_controlled",
+                "other"
+              ],
+              "description": "Access control condition associated with the edge. For an entrance edge, this describes control at the boundary access interface rather than along a general pedestrian approach path."
+            },
+            "weather_protected": {
+              "type": "boolean",
+              "description": "Whether the edge is protected from weather exposure."
+            }
+          },
+          "required": [
+            "edge_type",
+            "u_id",
+            "v_id"
+          ]
+        }
+      ]
+    },
+    "ZonePropertiesV2": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/CommonProperties"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^z[0-9]+$",
+              "description": "Unique identifier of the zone feature."
+            },
+            "feature_role": {
+              "const": "Zone",
+              "description": "Structural role of this feature in the pedestrian network."
+            },
+            "zone_type": {
+              "type": "string",
+              "enum": [
+                "plaza",
+                "platform",
+                "waiting_area",
+                "pedestrian_island",
+                "entrance_area",
+                "shared_space",
+                "footpath_area",
+                "other"
+              ],
+              "description": "Semantic type of the zone. `plaza` should be understood as an open public space whose primary character is place-oriented, supporting staying, gathering, dispersal, and related public-space functions. `shared_space` should be understood as a shared-use movement space anchored to `mixedpath`, with its primary character defined by shared circulation rather than by general open public place qualities. `waiting_area` should be understood as a general-purpose waiting space and should not be treated as equivalent to a platform tied to a boarding interface. `pedestrian_island` should be understood as an island-like protected or intermediate space within the roadway environment, used for separation, refuge, or intermediate waiting, rather than as a general waiting area or open public space. `entrance_area` should be understood as an area-like transition space immediately around an entrance or access interface, rather than as a generic entrance-related area. `footpath_area` should be understood as a footprint-style traversable ground area; the shared-use spatial counterpart of `mixedpath` should instead be expressed by `shared_space`. The distinction between `plaza` and `shared_space` is therefore primarily place-oriented versus movement-oriented. `other` should be used only when the object clearly belongs to the Zone layer but the existing stable zone subtypes are still insufficient for accurate classification; it should not serve as a broad catch-all for loosely defined space types."
+            },
+            "vertex_ids": {
+              "type": "array",
+              "minItems": 3,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "pattern": "^n[0-9]+$"
+              },
+              "description": "Optional ordered list of unique boundary vertex identifiers used to declare the zone boundary topology. This list does not include a repeated closing vertex."
+            },
+            "surface": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/SurfaceType"
+                }
+              ],
+              "description": "Surface material of the zone."
+            },
+            "function": {
+              "type": "string",
+              "description": "Functional description of the zone, such as waiting, circulation, or entrance-related use."
+            },
+            "covered": {
+              "type": "boolean",
+              "description": "Whether the zone is covered or sheltered."
+            },
+            "has_seating": {
+              "type": "boolean",
+              "description": "Whether seating is available within the zone."
+            },
+            "has_lighting": {
+              "type": "boolean",
+              "description": "Whether the zone is lit."
+            },
+            "waiting_capacity": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Estimated pedestrian waiting capacity of the zone."
+            },
+            "step_free": {
+              "type": "boolean",
+              "description": "Whether the zone is free of steps. This does not automatically imply wheelchair accessibility."
+            },
+            "wheelchair_accessible": {
+              "type": "boolean",
+              "description": "Whether the zone is considered suitable for wheelchair access based on the available data."
+            },
+            "tactile_warning_surface": {
+              "type": "boolean",
+              "description": "Whether tactile warning surface is present in the zone."
+            },
+            "controlled_entry": {
+              "type": "boolean",
+              "description": "Whether entry to the zone is controlled."
+            },
+            "queue_management": {
+              "type": "boolean",
+              "description": "Whether the zone is designed for organized queuing."
+            },
+            "shared_users": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "pedestrians",
+                  "cyclists",
+                  "micromobility",
+                  "service_vehicles",
+                  "general_vehicles",
+                  "other"
+                ]
+              },
+              "description": "User groups expected or allowed to share this shared_space."
+            },
+            "island_role": {
+              "type": "string",
+              "enum": [
+                "refuge",
+                "separator",
+                "median_waiting",
+                "channelization",
+                "other"
+              ],
+              "description": "Primary functional role of this pedestrian island within the roadway environment."
+            }
+          },
+          "required": [
+            "zone_type"
+          ]
+        }
+      ]
+    },
+    "NodePropertiesV3": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/NodePropertiesV2"
+        },
+        {
+          "if": {
+            "properties": {
+              "node_type": {
+                "const": "entrance_node"
+              }
+            },
+            "required": [
+              "node_type"
+            ]
+          },
+          "then": {
+            "required": [
+              "entrance_kind"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "node_type": {
+                "const": "intersection"
+              }
+            },
+            "required": [
+              "node_type"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "signal"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "node_type": {
+                "const": "other"
+              }
+            },
+            "required": [
+              "node_type"
+            ]
+          },
+          "then": {
+            "required": [
+              "notes"
+            ]
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "EdgePropertiesV3": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/EdgePropertiesV2"
+        },
+        {
+          "if": {
+            "properties": {
+              "edge_type": {
+                "const": "stair"
+              }
+            },
+            "required": [
+              "edge_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "step_count": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Number of steps on the stair edge."
+              },
+              "riser_height_cm": {
+                "type": "number",
+                "minimum": 0,
+                "description": "Height of each stair riser in centimeters."
+              },
+              "tread_depth_cm": {
+                "type": "number",
+                "minimum": 0,
+                "description": "Depth of each stair tread in centimeters."
+              },
+              "step_free": {
+                "const": false,
+                "description": "A stair edge is not step-free."
+              }
+            },
+            "required": [
+              "step_count",
+              "step_free"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "edge_type": {
+                "const": "ramp"
+              }
+            },
+            "required": [
+              "edge_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "step_free": {
+                "const": true,
+                "description": "A ramp edge is expected to provide step-free passage."
+              }
+            },
+            "required": [
+              "slope_percent",
+              "step_free"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "edge_type": {
+                "const": "crossing"
+              }
+            },
+            "required": [
+              "edge_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "crossing_marking": {
+                "type": "string",
+                "enum": [
+                  "zebra",
+                  "ladder",
+                  "painted",
+                  "unmarked",
+                  "other"
+                ],
+                "description": "Marking type of the pedestrian crossing."
+              },
+              "crossing_refuge": {
+                "type": "boolean",
+                "description": "Whether a refuge island is associated with the crossing."
+              }
+            },
+            "required": [
+              "traffic_control",
+              "crossing_marking"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "edge_type": {
+                "const": "curbramp"
+              }
+            },
+            "required": [
+              "edge_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "tactile_paving_at_bottom": {
+                "type": "boolean",
+                "description": "Whether tactile paving is present at the bottom of the curb ramp."
+              },
+              "tactile_paving_at_top": {
+                "type": "boolean",
+                "description": "Whether tactile paving is present at the top of the curb ramp."
+              },
+              "step_free": {
+                "const": true,
+                "description": "A curb ramp is expected to provide step-free transition."
+              }
+            },
+            "required": [
+              "slope_percent",
+              "step_free"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "edge_type": {
+                "const": "escalator"
+              }
+            },
+            "required": [
+              "edge_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "operating_status": {
+                "type": "string",
+                "enum": [
+                  "up",
+                  "down",
+                  "bidirectional",
+                  "stopped",
+                  "unknown"
+                ],
+                "description": "Operating direction or current status of an access-related escalator that directly connects to an outdoor-oriented pedestrian network."
+              },
+              "step_free": {
+                "const": false,
+                "description": "An access-related escalator edge is not step-free."
+              }
+            },
+            "required": [
+              "operating_status",
+              "step_free"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "edge_type": {
+                "const": "moving_walkway"
+              }
+            },
+            "required": [
+              "edge_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "step_free": {
+                "const": true,
+                "description": "A moving walkway should be understood as a continuous, mechanically assisted step-free passage segment rather than a stair-like facility."
+              }
+            },
+            "required": [
+              "step_free"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "edge_type": {
+                "const": "footbridge"
+              }
+            },
+            "required": [
+              "edge_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "is_grade_separated": {
+                "const": true,
+                "description": "A footbridge is expected to be grade-separated."
+              }
+            },
+            "required": [
+              "is_grade_separated",
+              "weather_protected"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "edge_type": {
+                "const": "underpass"
+              }
+            },
+            "required": [
+              "edge_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "is_grade_separated": {
+                "const": true,
+                "description": "An underpass is expected to be a grade-separated pedestrian structure."
+              }
+            },
+            "required": [
+              "is_grade_separated"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "edge_type": {
+                "const": "entrance"
+              }
+            },
+            "required": [
+              "edge_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "connects_building": {
+                "const": true,
+                "description": "An entrance edge is expected to represent a boundary-level access interface that connects to a building, facility, or enclosed pedestrian system."
+              }
+            },
+            "required": [
+              "connects_building",
+              "access_control"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "edge_type": {
+                "const": "other"
+              }
+            },
+            "required": [
+              "edge_type"
+            ]
+          },
+          "then": {
+            "required": [
+              "notes"
+            ]
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "ZonePropertiesV3": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/ZonePropertiesV2"
+        },
+        {
+          "if": {
+            "properties": {
+              "zone_type": {
+                "enum": [
+                  "plaza",
+                  "platform",
+                  "waiting_area",
+                  "pedestrian_island",
+                  "entrance_area",
+                  "shared_space"
+                ]
+              }
+            },
+            "required": [
+              "zone_type"
+            ]
+          },
+          "then": {
+            "required": [
+              "vertex_ids"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "zone_type": {
+                "const": "waiting_area"
+              }
+            },
+            "required": [
+              "zone_type"
+            ]
+          },
+          "then": {
+            "required": [
+              "waiting_capacity"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "zone_type": {
+                "const": "platform"
+              }
+            },
+            "required": [
+              "zone_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "boarding_edge_present": {
+                "const": true,
+                "description": "A platform zone is expected to include a boarding edge, reflecting a waiting-and-boarding space directly associated with the boarding interface rather than a general waiting area."
+              }
+            },
+            "required": [
+              "boarding_edge_present",
+              "tactile_warning_surface"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "zone_type": {
+                "const": "entrance_area"
+              }
+            },
+            "required": [
+              "zone_type"
+            ]
+          },
+          "then": {
+            "required": [
+              "controlled_entry"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "zone_type": {
+                "const": "shared_space"
+              }
+            },
+            "required": [
+              "zone_type"
+            ]
+          },
+          "then": {
+            "required": [
+              "function",
+              "shared_users"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "zone_type": {
+                "const": "pedestrian_island"
+              }
+            },
+            "required": [
+              "zone_type"
+            ]
+          },
+          "then": {
+            "required": [
+              "function",
+              "island_role"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "zone_type": {
+                "const": "footpath_area"
+              }
+            },
+            "required": [
+              "zone_type"
+            ]
+          },
+          "then": {
+            "required": [
+              "footprint_source",
+              "corresponding_edge_id",
+              "represents_edge_type"
+            ],
+            "properties": {
+              "footprint_source": {
+                "type": "string",
+                "enum": [
+                  "surveyed_polygon",
+                  "buffered_from_edge",
+                  "digitized_area",
+                  "unknown"
+                ],
+                "description": "How the footprint-style zone geometry was obtained."
+              },
+              "corresponding_edge_id": {
+                "type": "string",
+                "pattern": "^e[0-9]+$",
+                "description": "Identifier of the edge that this footprint-style zone corresponds to."
+              },
+              "represents_edge_type": {
+                "type": "string",
+                "enum": [
+                  "footpath",
+                  "crossing"
+                ],
+                "description": "Semantic type of the corresponding outdoor ground-level traversable edge represented by this footprint-style traversable ground area. `footpath_area` is used to correspond to a `footpath` or `crossing` edge, and is not the shared-use movement-space counterpart of `mixedpath`."
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "zone_type": {
+                "const": "other"
+              }
+            },
+            "required": [
+              "zone_type"
+            ]
+          },
+          "then": {
+            "required": [
+              "notes"
+            ]
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "NodeFeature": {
+      "type": "object",
+      "description": "GeoJSON Feature representing a network node.",
+      "properties": {
+        "type": {
+          "const": "Feature"
+        },
+        "geometry": {
+          "$ref": "#/$defs/PointGeometry"
+        },
+        "properties": {
+          "$ref": "#/$defs/NodePropertiesV3"
+        }
+      },
+      "required": [
+        "type",
+        "geometry",
+        "properties"
+      ],
+      "additionalProperties": false
+    },
+    "EdgeFeature": {
+      "type": "object",
+      "description": "GeoJSON Feature representing a network edge.",
+      "properties": {
+        "type": {
+          "const": "Feature"
+        },
+        "geometry": {
+          "$ref": "#/$defs/LineStringGeometry"
+        },
+        "properties": {
+          "$ref": "#/$defs/EdgePropertiesV3"
+        }
+      },
+      "required": [
+        "type",
+        "geometry",
+        "properties"
+      ],
+      "additionalProperties": false
+    },
+    "ZoneFeature": {
+      "type": "object",
+      "description": "GeoJSON Feature representing a network zone.",
+      "properties": {
+        "type": {
+          "const": "Feature"
+        },
+        "geometry": {
+          "$ref": "#/$defs/PolygonGeometry"
+        },
+        "properties": {
+          "$ref": "#/$defs/ZonePropertiesV3"
+        }
+      },
+      "required": [
+        "type",
+        "geometry",
+        "properties"
+      ],
+      "additionalProperties": false
+    },
+    "ObjectPropertiesV1": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/CommonProperties"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^o[0-9]+$",
+              "description": "Unique identifier of the object feature."
+            },
+            "feature_role": {
+              "const": "Object",
+              "description": "Structural role of this feature as an auxiliary object or asset in the pedestrian environment. This role belongs to the schema extension layer rather than the core topological network skeleton."
+            },
+            "object_type": {
+              "type": "string",
+              "enum": [
+                "pole",
+                "tree",
+                "bench",
+                "bin",
+                "bike_rack",
+                "sign",
+                "bollard",
+                "lighting",
+                "other"
+              ],
+              "description": "Semantic type of a discrete, non-topological object or asset. Traversable facilities such as ramps and crossings must be modeled as Node, Edge, or Zone features rather than ObjectFeature. `other` should be used only in the small number of cases where the object clearly belongs to the Object layer but cannot yet be stably classified by the existing object subtypes."
+            },
+            "anchor_node_id": {
+              "type": "string",
+              "pattern": "^n[0-9]+$",
+              "description": "Optional identifier of the nearby or associated network node. Use this to anchor a discrete object to a node-level facility context, such as a crossing node."
+            },
+            "anchor_edge_id": {
+              "type": "string",
+              "pattern": "^e[0-9]+$",
+              "description": "Optional identifier of the nearby or associated network edge. Use this to anchor a discrete object to an edge-level facility context, such as a crossing edge, ramp, stair, or other traversable edge."
+            },
+            "anchor_zone_id": {
+              "type": "string",
+              "pattern": "^z[0-9]+$",
+              "description": "Optional identifier of the containing or associated zone."
+            },
+            "footprint_m2": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Estimated plan-view footprint area of the object in square meters, if known."
+            }
+          },
+          "required": [
+            "object_type"
+          ]
+        },
+        {
+          "if": {
+            "properties": {
+              "object_type": {
+                "const": "other"
+              }
+            },
+            "required": [
+              "object_type"
+            ]
+          },
+          "then": {
+            "required": [
+              "notes"
+            ]
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "ObjectFeature": {
+      "type": "object",
+      "description": "GeoJSON Feature representing an auxiliary non-topological object associated with the pedestrian environment. ObjectFeature belongs to an extension layer and does not form part of the core Node-Edge-Zone network skeleton.",
+      "properties": {
+        "type": {
+          "const": "Feature"
+        },
+        "geometry": {
+          "$ref": "#/$defs/PointGeometry"
+        },
+        "properties": {
+          "$ref": "#/$defs/ObjectPropertiesV1"
+        }
+      },
+      "required": [
+        "type",
+        "geometry",
+        "properties"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
