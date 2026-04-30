@@ -1,0 +1,2377 @@
+{
+  "summary": {
+    "dataset_name": "Fairfield pedestrian network converted dataset",
+    "network_id": "fairfield_pedestrian_network",
+    "schema_version": "1.5.0",
+    "feature_count": 1450,
+    "feature_role_counts": {
+      "Node": 208,
+      "Edge": 233,
+      "Zone": 162,
+      "Object": 847
+    },
+    "topology_derived_intersection_count": 24,
+    "topology_derived_curb_ramp_node_count": 133,
+    "topology_derived_dead_end_count": 2,
+    "topology_derived_other_count": 33,
+    "topology_derived_two_edge_connection_count": 33,
+    "topology_derived_non_path_multiedge_count": 0,
+    "source_point_derived_curb_ramp_node_count": 11,
+    "source_point_derived_other_count": 5,
+    "ramp_origin_curb_ramp_node_count": 11,
+    "ramp_origin_placeholder_count": 5,
+    "crossing_edge_count": 71,
+    "painted_crossing_edge_count": 33,
+    "other_crossing_marking_count": 38,
+    "warning_count": 7,
+    "error_count": 0
+  },
+  "schema_validation": {
+    "passed": true,
+    "error_count": 0,
+    "errors": []
+  },
+  "reference_checks": {
+    "missing_edge_node_reference_count": 0,
+    "missing_zone_edge_reference_count": 0,
+    "missing_object_anchor_reference_count": 0,
+    "missing_edge_node_references": [],
+    "missing_zone_edge_references": [],
+    "missing_object_anchor_references": []
+  },
+  "polygon_edge_binding_checks": {
+    "geometry_nearest_binding_count": 0,
+    "distance_threshold_m": 5.0,
+    "bindings_exceeding_threshold_count": 0,
+    "bindings_exceeding_threshold": [],
+    "geometry_nearest_bindings": []
+  },
+  "node_classification_checks": {
+    "node_count": 208,
+    "topology_derived_node_count": 192,
+    "source_point_derived_node_count": 16,
+    "missing_node_origin_count": 0,
+    "missing_node_origin": [],
+    "intersection_count": 24,
+    "curb_ramp_node_count": 144,
+    "dead_end_count": 2,
+    "other_node_count": 38,
+    "topology_derived_intersection_count": 24,
+    "topology_derived_curb_ramp_node_count": 133,
+    "topology_derived_dead_end_count": 2,
+    "topology_derived_other_count": 33,
+    "topology_derived_two_edge_connection_count": 33,
+    "topology_derived_non_path_multiedge_count": 0,
+    "source_point_derived_curb_ramp_node_count": 11,
+    "source_point_derived_other_count": 5,
+    "node_classification_interpretation": "Topology-derived intersections are interpreted conservatively as multi-edge pedestrian path junctions. Ordinary two-edge topology connections are retained as other nodes rather than intersections to avoid over-interpreting source segmentation points or simple path bends. Crossing-path transition nodes remain classified as curb_ramp_node."
+  },
+  "topology_curb_ramp_node_checks": {
+    "topology_derived_curb_ramp_node_count": 133,
+    "missing_inference_method_count": 0,
+    "missing_classification_reason_count": 0,
+    "missing_connected_edge_types_count": 0,
+    "crossing_relation_status_counts": {
+      "resolved": 133
+    },
+    "topology_derived_curb_ramp_nodes": [
+      {
+        "node_id": "n1",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e1,e92; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n4",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e2,e81; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n5",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e219,e3,e80; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n8",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e188,e4; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n11",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e118,e120,e6; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n13",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e203,e205,e7; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n14",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e191,e8; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n15",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e115,e116,e117,e8; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n17",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e210,e9; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n18",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e10,e36,e93,e94; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n19",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e10,e221; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n22",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e12,e35,e94,e97; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n23",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e12,e184,e186; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n25",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e13,e228; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n27",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e14,e200,e202; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n29",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e15,e222; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n31",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e140,e16,e233; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n33",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e143,e144,e17; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n35",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e18,e197,e199; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n37",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e139,e152,e19; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n38",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e129,e20,e47; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n39",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e165,e166,e20; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n41",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e128,e21; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n42",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e129,e22,e46; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n43",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e194,e22; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n44",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e142,e23; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n46",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e24,e71; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n48",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e25,e91; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n50",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e26,e82,e84; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n51",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e28,e82,e83; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n52",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e160,e28; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n55",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e119,e120,e30; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n56",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e115,e231,e31; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n57",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e204,e205,e31; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n59",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e232,e32; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n60",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e191,e33; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n61",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e211,e212,e33; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n62",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e170,e171,e34; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n63",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e185,e186,e36; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n64",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e138,e139,e37; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n65",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e201,e202,e38; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n66",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e163,e164,e39; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n67",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e140,e40,e48; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n68",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e153,e41; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n69",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e157,e225,e42; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n70",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e198,e199,e42; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n74",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e166,e45; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n75",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e131,e132,e46; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n76",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e209,e212,e47; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n78",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e49,e71; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n82",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e194,e51; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n83",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e230,e52; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n84",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e133,e53; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n85",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e153,e54; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n86",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e133,e54; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n89",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e121,e56; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n91",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e168,e57; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n93",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e181,e182,e58; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n97",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e61,e90; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n98",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e213,e214,e61; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n99",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e62,e90; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n102",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e103,e215,e63; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n103",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e101,e64; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n104",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e101,e65; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n109",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e106,e108,e68; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n110",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e105,e69; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n111",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e105,e70; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n112",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e107,e108,e70; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n113",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e72,e73; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n114",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e216,e218,e219,e72; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n115",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e74,e75; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n116",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e75,e76; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n117",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e76,e77; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n118",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e77,e78; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n120",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e80,e81; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n121",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e110,e83; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n122",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e84,e99; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n125",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e100,e214,e215,e86,e99; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n126",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e87,e89; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n127",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e88,e89; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n129",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e169,e93; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n130",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e96,e97; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n131",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e111,e112,e98; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n133",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e102,e103; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n137",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e111,e206,e208; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n138",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e112,e114; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n139",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e113,e190; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n141",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e118,e124,e126; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n142",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e119,e125,e126; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n143",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e121,e123; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n144",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e127,e128; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n145",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e127,e130,e132; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n147",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e131,e135; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n148",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e134,e136; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n149",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e134,e150; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n150",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e135,e137; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n151",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e138,e227; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n152",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e141,e229,e233; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n154",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e142,e143; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n155",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e145,e180; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n156",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e146,e147; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n157",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e147,e149; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n158",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e148,e224; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n159",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e151,e152; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n161",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e154,e161; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n162",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e156,e158; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n163",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e156,e157,e162,e185; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n164",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e159,e160; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n165",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e159,e161,e184; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n166",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e162,e164,e222; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n167",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e163,e226; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n168",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e167,e171,e220; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n169",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e167,e172,e201; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n170",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e168,e170; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n171",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e172,e173; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n173",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e174,e176; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n174",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e176,e178; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n175",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e177,e182; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n176",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e179,e180; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n177",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e179,e183; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n178",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e181,e183,e223; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n179",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e187,e188; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n180",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e189,e190; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n181",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e189,e207,e208; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n183",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e192,e193; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n184",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e193,e196; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n186",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e209,e210; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n187",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e220,e221; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n188",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e223,e224; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n189",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e225,e226; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n190",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e227,e228; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n191",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e229,e230; crossing_relation_status=resolved"
+      },
+      {
+        "node_id": "n192",
+        "inference_method": "topology_curb_ramp_node_classification",
+        "classification_reason": "topology_crossing_path_transition_connection",
+        "connected_edge_types": "crossing,footpath",
+        "crossing_relation_status": "resolved",
+        "notes": "node_origin=topology_derived; inference_method=topology_curb_ramp_node_classification; classification_reason=topology_crossing_path_transition_connection; connected_edge_types=crossing,footpath; connected_edge_ids=e231,e232; crossing_relation_status=resolved"
+      }
+    ],
+    "warnings": []
+  },
+  "ramp_node_outcome_checks": {
+    "ramp_origin_curb_ramp_node_count": 11,
+    "ramp_origin_placeholder_count": 5,
+    "ramp_origin_other_node_count": 0,
+    "ramp_origin_curb_ramp_node_resolved_count": 0,
+    "ramp_origin_curb_ramp_node_partial_count": 5,
+    "ramp_origin_curb_ramp_node_unresolved_count": 6,
+    "ramp_origin_curb_ramp_nodes": [
+      {
+        "node_id": "n193",
+        "node_type": "curb_ramp_node",
+        "associated_edge_id": "e14",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "unresolved",
+        "upgrade_reason": "clear_ramp_transition_point_in_pedestrian_network_context",
+        "notes": "node_origin=source_point_derived; source_id=13; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=unresolved; associated_edge_id=e14; upgrade_reason=clear_ramp_transition_point_in_pedestrian_network_context; network_context=pedestrian_edge_and_zone_proximity; pedestrian_edge_id=e14; pedestrian_edge_distance_m=0.58; zone_id=z14; zone_distance_m=0.0; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n195",
+        "node_type": "curb_ramp_node",
+        "associated_edge_id": "e45",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "unresolved",
+        "upgrade_reason": "clear_ramp_transition_point_in_pedestrian_network_context",
+        "notes": "node_origin=source_point_derived; source_id=33; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=unresolved; associated_edge_id=e45; upgrade_reason=clear_ramp_transition_point_in_pedestrian_network_context; network_context=pedestrian_edge_and_zone_proximity; pedestrian_edge_id=e45; pedestrian_edge_distance_m=0.485; zone_id=z45; zone_distance_m=0.0; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n196",
+        "node_type": "curb_ramp_node",
+        "associated_edge_id": "e182",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "partial",
+        "upgrade_reason": "near_crossing_context_without_stable_endpoint_merge",
+        "notes": "node_origin=source_point_derived; source_id=45; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=partial; associated_edge_id=e182; upgrade_reason=near_crossing_context_without_stable_endpoint_merge; network_context=crossing_edge_proximity; crossing_edge_distance_m=1.365; pedestrian_edge_id=e182; pedestrian_edge_distance_m=1.365; zone_id=z130; zone_distance_m=2.56; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n197",
+        "node_type": "curb_ramp_node",
+        "associated_edge_id": "e202",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "partial",
+        "upgrade_reason": "near_crossing_context_without_stable_endpoint_merge",
+        "notes": "node_origin=source_point_derived; source_id=46; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=partial; associated_edge_id=e202; upgrade_reason=near_crossing_context_without_stable_endpoint_merge; network_context=crossing_edge_proximity; crossing_edge_distance_m=1.036; pedestrian_edge_id=e202; pedestrian_edge_distance_m=1.036; zone_id=z144; zone_distance_m=1.787; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n198",
+        "node_type": "curb_ramp_node",
+        "associated_edge_id": "e161",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "partial",
+        "upgrade_reason": "near_crossing_context_without_stable_endpoint_merge",
+        "notes": "node_origin=source_point_derived; source_id=48; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=partial; associated_edge_id=e161; upgrade_reason=near_crossing_context_without_stable_endpoint_merge; network_context=crossing_edge_proximity; crossing_edge_distance_m=0.94; pedestrian_edge_id=e161; pedestrian_edge_distance_m=0.94; zone_id=z134; zone_distance_m=0.698; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n201",
+        "node_type": "curb_ramp_node",
+        "associated_edge_id": "e83",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "partial",
+        "upgrade_reason": "near_crossing_context_without_stable_endpoint_merge",
+        "notes": "node_origin=source_point_derived; source_id=60; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=partial; associated_edge_id=e83; upgrade_reason=near_crossing_context_without_stable_endpoint_merge; network_context=crossing_edge_proximity; crossing_edge_distance_m=1.701; pedestrian_edge_id=e83; pedestrian_edge_distance_m=1.701; zone_id=z28; zone_distance_m=1.894; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n202",
+        "node_type": "curb_ramp_node",
+        "associated_edge_id": "e15",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "unresolved",
+        "upgrade_reason": "clear_ramp_transition_point_in_pedestrian_network_context",
+        "notes": "node_origin=source_point_derived; source_id=62; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=unresolved; associated_edge_id=e15; upgrade_reason=clear_ramp_transition_point_in_pedestrian_network_context; network_context=pedestrian_edge_and_zone_proximity; pedestrian_edge_id=e15; pedestrian_edge_distance_m=2.268; zone_id=z15; zone_distance_m=1.073; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n204",
+        "node_type": "curb_ramp_node",
+        "associated_edge_id": "e120",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "partial",
+        "upgrade_reason": "near_crossing_context_without_stable_endpoint_merge",
+        "notes": "node_origin=source_point_derived; source_id=82; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=partial; associated_edge_id=e120; upgrade_reason=near_crossing_context_without_stable_endpoint_merge; network_context=crossing_edge_proximity; crossing_edge_distance_m=2.45; pedestrian_edge_id=e120; pedestrian_edge_distance_m=2.45; zone_id=z6; zone_distance_m=1.834; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n205",
+        "node_type": "curb_ramp_node",
+        "associated_edge_id": "e59",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "unresolved",
+        "upgrade_reason": "clear_ramp_transition_point_in_pedestrian_network_context",
+        "notes": "node_origin=source_point_derived; source_id=83; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=unresolved; associated_edge_id=e59; upgrade_reason=clear_ramp_transition_point_in_pedestrian_network_context; network_context=pedestrian_edge_and_zone_proximity; pedestrian_edge_id=e59; pedestrian_edge_distance_m=1.176; zone_id=z59; zone_distance_m=0.207; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n206",
+        "node_type": "curb_ramp_node",
+        "associated_edge_id": "e14",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "unresolved",
+        "upgrade_reason": "clear_ramp_transition_point_in_pedestrian_network_context",
+        "notes": "node_origin=source_point_derived; source_id=87; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=unresolved; associated_edge_id=e14; upgrade_reason=clear_ramp_transition_point_in_pedestrian_network_context; network_context=pedestrian_edge_and_zone_proximity; pedestrian_edge_id=e14; pedestrian_edge_distance_m=0.464; zone_id=z14; zone_distance_m=0.0; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n208",
+        "node_type": "curb_ramp_node",
+        "associated_edge_id": "e16",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "unresolved",
+        "upgrade_reason": "clear_ramp_transition_point_in_pedestrian_network_context",
+        "notes": "node_origin=source_point_derived; source_id=101; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=unresolved; associated_edge_id=e16; upgrade_reason=clear_ramp_transition_point_in_pedestrian_network_context; network_context=pedestrian_edge_and_zone_proximity; pedestrian_edge_id=e16; pedestrian_edge_distance_m=1.36; zone_id=z16; zone_distance_m=0.0; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      }
+    ],
+    "ramp_origin_placeholders": [
+      {
+        "node_id": "n194",
+        "node_type": "other",
+        "associated_edge_id": null,
+        "inference_method": "point_placeholder_node",
+        "crossing_relation_status": null,
+        "upgrade_reason": null,
+        "notes": "source_id=32; node_origin=source_point_derived; source_type=ramp; whether_near_crossing=false; reason_for_placeholder=no_stable_crossing_endpoint_merge_or_ramp_edge_mapping; inference_method=point_placeholder_node; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_placeholder_not_confirmed_topology"
+      },
+      {
+        "node_id": "n199",
+        "node_type": "other",
+        "associated_edge_id": null,
+        "inference_method": "point_placeholder_node",
+        "crossing_relation_status": null,
+        "upgrade_reason": null,
+        "notes": "source_id=55; node_origin=source_point_derived; source_type=ramp; whether_near_crossing=false; reason_for_placeholder=no_stable_crossing_endpoint_merge_or_ramp_edge_mapping; inference_method=point_placeholder_node; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_placeholder_not_confirmed_topology"
+      },
+      {
+        "node_id": "n200",
+        "node_type": "other",
+        "associated_edge_id": null,
+        "inference_method": "point_placeholder_node",
+        "crossing_relation_status": null,
+        "upgrade_reason": null,
+        "notes": "source_id=57; node_origin=source_point_derived; source_type=ramp; whether_near_crossing=false; reason_for_placeholder=no_stable_crossing_endpoint_merge_or_ramp_edge_mapping; inference_method=point_placeholder_node; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_placeholder_not_confirmed_topology"
+      },
+      {
+        "node_id": "n203",
+        "node_type": "other",
+        "associated_edge_id": null,
+        "inference_method": "point_placeholder_node",
+        "crossing_relation_status": null,
+        "upgrade_reason": null,
+        "notes": "source_id=73; node_origin=source_point_derived; source_type=ramp; whether_near_crossing=false; reason_for_placeholder=no_stable_crossing_endpoint_merge_or_ramp_edge_mapping; inference_method=point_placeholder_node; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_placeholder_not_confirmed_topology"
+      },
+      {
+        "node_id": "n207",
+        "node_type": "other",
+        "associated_edge_id": null,
+        "inference_method": "point_placeholder_node",
+        "crossing_relation_status": null,
+        "upgrade_reason": null,
+        "notes": "source_id=91; node_origin=source_point_derived; source_type=ramp; whether_near_crossing=false; reason_for_placeholder=no_stable_crossing_endpoint_merge_or_ramp_edge_mapping; inference_method=point_placeholder_node; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_placeholder_not_confirmed_topology"
+      }
+    ],
+    "ramp_origin_other_nodes": []
+  },
+  "curb_ramp_node_checks": {
+    "point_derived_curb_ramp_node_count": 11,
+    "ramp_origin_curb_ramp_node_count": 11,
+    "missing_inference_method_count": 0,
+    "missing_crossing_relation_status_count": 0,
+    "missing_source_type_count": 0,
+    "point_derived_curb_ramp_nodes": [
+      {
+        "node_id": "n193",
+        "node_origin": "source_point_derived",
+        "source_type": "ramp",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "unresolved",
+        "associated_edge_id": "e14",
+        "notes": "node_origin=source_point_derived; source_id=13; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=unresolved; associated_edge_id=e14; upgrade_reason=clear_ramp_transition_point_in_pedestrian_network_context; network_context=pedestrian_edge_and_zone_proximity; pedestrian_edge_id=e14; pedestrian_edge_distance_m=0.58; zone_id=z14; zone_distance_m=0.0; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n195",
+        "node_origin": "source_point_derived",
+        "source_type": "ramp",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "unresolved",
+        "associated_edge_id": "e45",
+        "notes": "node_origin=source_point_derived; source_id=33; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=unresolved; associated_edge_id=e45; upgrade_reason=clear_ramp_transition_point_in_pedestrian_network_context; network_context=pedestrian_edge_and_zone_proximity; pedestrian_edge_id=e45; pedestrian_edge_distance_m=0.485; zone_id=z45; zone_distance_m=0.0; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n196",
+        "node_origin": "source_point_derived",
+        "source_type": "ramp",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "partial",
+        "associated_edge_id": "e182",
+        "notes": "node_origin=source_point_derived; source_id=45; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=partial; associated_edge_id=e182; upgrade_reason=near_crossing_context_without_stable_endpoint_merge; network_context=crossing_edge_proximity; crossing_edge_distance_m=1.365; pedestrian_edge_id=e182; pedestrian_edge_distance_m=1.365; zone_id=z130; zone_distance_m=2.56; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n197",
+        "node_origin": "source_point_derived",
+        "source_type": "ramp",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "partial",
+        "associated_edge_id": "e202",
+        "notes": "node_origin=source_point_derived; source_id=46; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=partial; associated_edge_id=e202; upgrade_reason=near_crossing_context_without_stable_endpoint_merge; network_context=crossing_edge_proximity; crossing_edge_distance_m=1.036; pedestrian_edge_id=e202; pedestrian_edge_distance_m=1.036; zone_id=z144; zone_distance_m=1.787; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n198",
+        "node_origin": "source_point_derived",
+        "source_type": "ramp",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "partial",
+        "associated_edge_id": "e161",
+        "notes": "node_origin=source_point_derived; source_id=48; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=partial; associated_edge_id=e161; upgrade_reason=near_crossing_context_without_stable_endpoint_merge; network_context=crossing_edge_proximity; crossing_edge_distance_m=0.94; pedestrian_edge_id=e161; pedestrian_edge_distance_m=0.94; zone_id=z134; zone_distance_m=0.698; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n201",
+        "node_origin": "source_point_derived",
+        "source_type": "ramp",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "partial",
+        "associated_edge_id": "e83",
+        "notes": "node_origin=source_point_derived; source_id=60; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=partial; associated_edge_id=e83; upgrade_reason=near_crossing_context_without_stable_endpoint_merge; network_context=crossing_edge_proximity; crossing_edge_distance_m=1.701; pedestrian_edge_id=e83; pedestrian_edge_distance_m=1.701; zone_id=z28; zone_distance_m=1.894; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n202",
+        "node_origin": "source_point_derived",
+        "source_type": "ramp",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "unresolved",
+        "associated_edge_id": "e15",
+        "notes": "node_origin=source_point_derived; source_id=62; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=unresolved; associated_edge_id=e15; upgrade_reason=clear_ramp_transition_point_in_pedestrian_network_context; network_context=pedestrian_edge_and_zone_proximity; pedestrian_edge_id=e15; pedestrian_edge_distance_m=2.268; zone_id=z15; zone_distance_m=1.073; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n204",
+        "node_origin": "source_point_derived",
+        "source_type": "ramp",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "partial",
+        "associated_edge_id": "e120",
+        "notes": "node_origin=source_point_derived; source_id=82; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=partial; associated_edge_id=e120; upgrade_reason=near_crossing_context_without_stable_endpoint_merge; network_context=crossing_edge_proximity; crossing_edge_distance_m=2.45; pedestrian_edge_id=e120; pedestrian_edge_distance_m=2.45; zone_id=z6; zone_distance_m=1.834; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n205",
+        "node_origin": "source_point_derived",
+        "source_type": "ramp",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "unresolved",
+        "associated_edge_id": "e59",
+        "notes": "node_origin=source_point_derived; source_id=83; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=unresolved; associated_edge_id=e59; upgrade_reason=clear_ramp_transition_point_in_pedestrian_network_context; network_context=pedestrian_edge_and_zone_proximity; pedestrian_edge_id=e59; pedestrian_edge_distance_m=1.176; zone_id=z59; zone_distance_m=0.207; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n206",
+        "node_origin": "source_point_derived",
+        "source_type": "ramp",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "unresolved",
+        "associated_edge_id": "e14",
+        "notes": "node_origin=source_point_derived; source_id=87; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=unresolved; associated_edge_id=e14; upgrade_reason=clear_ramp_transition_point_in_pedestrian_network_context; network_context=pedestrian_edge_and_zone_proximity; pedestrian_edge_id=e14; pedestrian_edge_distance_m=0.464; zone_id=z14; zone_distance_m=0.0; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      },
+      {
+        "node_id": "n208",
+        "node_origin": "source_point_derived",
+        "source_type": "ramp",
+        "inference_method": "curb_ramp_node_upgrade",
+        "crossing_relation_status": "unresolved",
+        "associated_edge_id": "e16",
+        "notes": "node_origin=source_point_derived; source_id=101; source_type=ramp; inference_method=curb_ramp_node_upgrade; crossing_relation_status=unresolved; associated_edge_id=e16; upgrade_reason=clear_ramp_transition_point_in_pedestrian_network_context; network_context=pedestrian_edge_and_zone_proximity; pedestrian_edge_id=e16; pedestrian_edge_distance_m=1.36; zone_id=z16; zone_distance_m=0.0; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_inferred_transition_not_confirmed_topology"
+      }
+    ],
+    "warnings": []
+  },
+  "placeholder_node_checks": {
+    "other_node_count": 38,
+    "ramp_placeholder_count": 5,
+    "source_point_placeholder_other_count": 5,
+    "topology_two_edge_connection_other_count": 33,
+    "topology_non_path_multiedge_other_count": 0,
+    "unexpected_other_node_count": 0,
+    "legacy_crossing_placeholder_count": 0,
+    "crossing_origin_placeholder_expected_count": 0,
+    "crossing_origin_placeholder_interpretation": "Crossing-origin placeholder nodes are no longer expected output in the current Fairfield conversion flow. A count of 0 is the expected outcome.",
+    "node_classification_interpretation": "Source-point-derived other nodes may still represent conservative placeholder nodes. Topology-derived other nodes classified via topology_two_edge_connection_classification or topology_non_path_multiedge_classification are treated as deliberate conservative topology outcomes rather than placeholder warnings.",
+    "ramp_placeholders": [
+      {
+        "node_id": "n194",
+        "connected_edge_count": 1,
+        "notes": "source_id=32; node_origin=source_point_derived; source_type=ramp; whether_near_crossing=false; reason_for_placeholder=no_stable_crossing_endpoint_merge_or_ramp_edge_mapping; inference_method=point_placeholder_node; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_placeholder_not_confirmed_topology",
+        "source_type": "ramp",
+        "associated_edge_id": null,
+        "node_origin": "source_point_derived",
+        "inference_method": "point_placeholder_node",
+        "connected_edge_count_semantics": "schema_minimum_placeholder_not_confirmed_topology"
+      },
+      {
+        "node_id": "n199",
+        "connected_edge_count": 1,
+        "notes": "source_id=55; node_origin=source_point_derived; source_type=ramp; whether_near_crossing=false; reason_for_placeholder=no_stable_crossing_endpoint_merge_or_ramp_edge_mapping; inference_method=point_placeholder_node; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_placeholder_not_confirmed_topology",
+        "source_type": "ramp",
+        "associated_edge_id": null,
+        "node_origin": "source_point_derived",
+        "inference_method": "point_placeholder_node",
+        "connected_edge_count_semantics": "schema_minimum_placeholder_not_confirmed_topology"
+      },
+      {
+        "node_id": "n200",
+        "connected_edge_count": 1,
+        "notes": "source_id=57; node_origin=source_point_derived; source_type=ramp; whether_near_crossing=false; reason_for_placeholder=no_stable_crossing_endpoint_merge_or_ramp_edge_mapping; inference_method=point_placeholder_node; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_placeholder_not_confirmed_topology",
+        "source_type": "ramp",
+        "associated_edge_id": null,
+        "node_origin": "source_point_derived",
+        "inference_method": "point_placeholder_node",
+        "connected_edge_count_semantics": "schema_minimum_placeholder_not_confirmed_topology"
+      },
+      {
+        "node_id": "n203",
+        "connected_edge_count": 1,
+        "notes": "source_id=73; node_origin=source_point_derived; source_type=ramp; whether_near_crossing=false; reason_for_placeholder=no_stable_crossing_endpoint_merge_or_ramp_edge_mapping; inference_method=point_placeholder_node; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_placeholder_not_confirmed_topology",
+        "source_type": "ramp",
+        "associated_edge_id": null,
+        "node_origin": "source_point_derived",
+        "inference_method": "point_placeholder_node",
+        "connected_edge_count_semantics": "schema_minimum_placeholder_not_confirmed_topology"
+      },
+      {
+        "node_id": "n207",
+        "connected_edge_count": 1,
+        "notes": "source_id=91; node_origin=source_point_derived; source_type=ramp; whether_near_crossing=false; reason_for_placeholder=no_stable_crossing_endpoint_merge_or_ramp_edge_mapping; inference_method=point_placeholder_node; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_placeholder_not_confirmed_topology",
+        "source_type": "ramp",
+        "associated_edge_id": null,
+        "node_origin": "source_point_derived",
+        "inference_method": "point_placeholder_node",
+        "connected_edge_count_semantics": "schema_minimum_placeholder_not_confirmed_topology"
+      }
+    ],
+    "source_point_placeholders": [
+      {
+        "node_id": "n194",
+        "connected_edge_count": 1,
+        "notes": "source_id=32; node_origin=source_point_derived; source_type=ramp; whether_near_crossing=false; reason_for_placeholder=no_stable_crossing_endpoint_merge_or_ramp_edge_mapping; inference_method=point_placeholder_node; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_placeholder_not_confirmed_topology",
+        "source_type": "ramp",
+        "associated_edge_id": null,
+        "node_origin": "source_point_derived",
+        "inference_method": "point_placeholder_node",
+        "connected_edge_count_semantics": "schema_minimum_placeholder_not_confirmed_topology"
+      },
+      {
+        "node_id": "n199",
+        "connected_edge_count": 1,
+        "notes": "source_id=55; node_origin=source_point_derived; source_type=ramp; whether_near_crossing=false; reason_for_placeholder=no_stable_crossing_endpoint_merge_or_ramp_edge_mapping; inference_method=point_placeholder_node; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_placeholder_not_confirmed_topology",
+        "source_type": "ramp",
+        "associated_edge_id": null,
+        "node_origin": "source_point_derived",
+        "inference_method": "point_placeholder_node",
+        "connected_edge_count_semantics": "schema_minimum_placeholder_not_confirmed_topology"
+      },
+      {
+        "node_id": "n200",
+        "connected_edge_count": 1,
+        "notes": "source_id=57; node_origin=source_point_derived; source_type=ramp; whether_near_crossing=false; reason_for_placeholder=no_stable_crossing_endpoint_merge_or_ramp_edge_mapping; inference_method=point_placeholder_node; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_placeholder_not_confirmed_topology",
+        "source_type": "ramp",
+        "associated_edge_id": null,
+        "node_origin": "source_point_derived",
+        "inference_method": "point_placeholder_node",
+        "connected_edge_count_semantics": "schema_minimum_placeholder_not_confirmed_topology"
+      },
+      {
+        "node_id": "n203",
+        "connected_edge_count": 1,
+        "notes": "source_id=73; node_origin=source_point_derived; source_type=ramp; whether_near_crossing=false; reason_for_placeholder=no_stable_crossing_endpoint_merge_or_ramp_edge_mapping; inference_method=point_placeholder_node; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_placeholder_not_confirmed_topology",
+        "source_type": "ramp",
+        "associated_edge_id": null,
+        "node_origin": "source_point_derived",
+        "inference_method": "point_placeholder_node",
+        "connected_edge_count_semantics": "schema_minimum_placeholder_not_confirmed_topology"
+      },
+      {
+        "node_id": "n207",
+        "connected_edge_count": 1,
+        "notes": "source_id=91; node_origin=source_point_derived; source_type=ramp; whether_near_crossing=false; reason_for_placeholder=no_stable_crossing_endpoint_merge_or_ramp_edge_mapping; inference_method=point_placeholder_node; connected_edge_count=1; connected_edge_count_semantics=schema_minimum_placeholder_not_confirmed_topology",
+        "source_type": "ramp",
+        "associated_edge_id": null,
+        "node_origin": "source_point_derived",
+        "inference_method": "point_placeholder_node",
+        "connected_edge_count_semantics": "schema_minimum_placeholder_not_confirmed_topology"
+      }
+    ],
+    "legacy_crossing_placeholders": [],
+    "topology_two_edge_connection_others": [
+      {
+        "node_id": "n3",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e2,e26",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n6",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e3,e35",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n9",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e165,e5",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n10",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e5,e6",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n12",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e109,e7",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n16",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e124,e9",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n24",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e13,e39",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n26",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e14,e40",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n28",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e15,e38",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n30",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e16,e37",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n32",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e17,e41",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n36",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e19,e44",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n40",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e21,e45",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n47",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e24,e27",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n54",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e122,e30",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n58",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e125,e32",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n71",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e43,e53",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n73",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e44,e52",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n79",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e49,e50",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n80",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e50,e79",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n81",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e195,e51",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n87",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e204,e55",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n90",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e203,e56",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n96",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e59,e60",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n101",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e63,e64",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n105",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e65,e66",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n106",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e66,e67",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n108",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e68,e69",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n128",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=crossing; connected_edge_ids=e91,e92",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n134",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e104,e206",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n135",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e104,e106",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n136",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=footpath; connected_edge_ids=e107,e109",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      },
+      {
+        "node_id": "n153",
+        "connected_edge_count": 2,
+        "notes": "node_origin=topology_derived; inference_method=topology_two_edge_connection_classification; classification_reason=two_edge_connection_not_treated_as_intersection; connected_edge_types=crossing; connected_edge_ids=e141,e144",
+        "source_type": null,
+        "associated_edge_id": null,
+        "node_origin": "topology_derived",
+        "inference_method": "topology_two_edge_connection_classification",
+        "connected_edge_count_semantics": null
+      }
+    ],
+    "topology_non_path_multiedge_others": [],
+    "unexpected_other_nodes": []
+  },
+  "crossing_marking_checks": {
+    "crossing_edge_count": 71,
+    "painted_crossing_edge_count": 33,
+    "other_crossing_marking_count": 38,
+    "missing_crossing_marking_count": 0,
+    "unexpected_crossing_traffic_control_count": 0,
+    "painted_crossing_edges": [
+      {
+        "edge_id": "e72",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=72; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e75",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=75; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e77",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=77; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e83",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=83; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e84",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=84; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e103",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=103; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e112",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=112; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e121",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=121; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e126",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=126; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e132",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=132; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e134",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=134; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e135",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=135; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e138",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=138; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e140",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=140; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e141",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=141; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e142",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=142; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e147",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=147; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e152",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=152; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e156",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=156; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e157",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=157; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e161",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=161; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e164",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=164; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e168",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=168; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e171",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=171; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e172",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=172; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e176",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=176; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e182",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=182; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e183",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=183; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e186",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=186; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e193",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=193; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e199",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=199; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e219",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=219; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e224",
+        "traffic_control": "other",
+        "crossing_marking": "painted",
+        "notes": "source_id=224; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      }
+    ],
+    "other_marking_crossing_edges": [
+      {
+        "edge_id": "e71",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=71; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e81",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=81; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e89",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=89; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e90",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=90; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e91",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=91; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e92",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=92; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e93",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=93; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e94",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=94; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e97",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=97; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e101",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=101; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e105",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=105; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e108",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=108; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e115",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=115; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e120",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=120; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e128",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=128; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e129",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=129; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e133",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=133; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e144",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=144; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e153",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=153; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e160",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=160; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e166",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=166; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e180",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=180; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e188",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=188; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e190",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=190; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e191",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=191; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e194",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=194; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e202",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=202; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e205",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=205; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e208",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=208; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e210",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=210; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e212",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=212; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e214",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=214; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e221",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=221; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e222",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=222; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e226",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=226; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e228",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=228; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e230",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=230; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      },
+      {
+        "edge_id": "e232",
+        "traffic_control": "other",
+        "crossing_marking": "other",
+        "notes": "source_id=232; extra_note=Fairfield source did not provide crossing control or marking detail; populated traffic_control=other and crossing_marking=other."
+      }
+    ],
+    "missing_crossing_marking_edges": [],
+    "unexpected_crossing_traffic_control_edges": [],
+    "crossing_marking_interpretation": "Crossing points are retained as auxiliary evidence rather than emitted as final Node or Object features. When a crossing point can be matched to a nearby crossing edge in the conversion workflow, that edge may be conservatively refined from crossing_marking=other to crossing_marking=painted. Crossing edges that remain crossing_marking=other should be interpreted as not having received sufficient point-based support for painted marking inference, rather than as proof that they are unmarked."
+  },
+  "edge_length_checks": {
+    "edge_count": 233,
+    "difference_threshold_m": 0.01,
+    "mean_absolute_difference_m": 0.0,
+    "max_absolute_difference_m": 0.0,
+    "edges_exceeding_threshold_count": 0,
+    "edges_exceeding_threshold": []
+  },
+  "object_anchor_checks": {
+    "object_count": 847,
+    "edge_anchor_coverage": 0.9799291617473436,
+    "zone_anchor_coverage": 0.9976387249114522,
+    "any_anchor_coverage": 0.9976387249114522,
+    "unanchored_object_count": 2,
+    "unanchored_objects": [
+      {
+        "object_id": "o624"
+      },
+      {
+        "object_id": "o644"
+      }
+    ],
+    "edge_anchor_distance_threshold_m": 5.0,
+    "zone_anchor_distance_threshold_m": 10.0,
+    "distant_edge_anchor_count": 0,
+    "distant_edge_anchors": [],
+    "distant_zone_anchor_count": 0,
+    "distant_zone_anchors": []
+  },
+  "warnings": [
+    {
+      "type": "placeholder_connected_edge_count_semantics",
+      "node_id": "n194",
+      "source_type": "ramp",
+      "connected_edge_count": 1,
+      "connected_edge_count_semantics": "schema_minimum_placeholder_not_confirmed_topology"
+    },
+    {
+      "type": "placeholder_connected_edge_count_semantics",
+      "node_id": "n199",
+      "source_type": "ramp",
+      "connected_edge_count": 1,
+      "connected_edge_count_semantics": "schema_minimum_placeholder_not_confirmed_topology"
+    },
+    {
+      "type": "placeholder_connected_edge_count_semantics",
+      "node_id": "n200",
+      "source_type": "ramp",
+      "connected_edge_count": 1,
+      "connected_edge_count_semantics": "schema_minimum_placeholder_not_confirmed_topology"
+    },
+    {
+      "type": "placeholder_connected_edge_count_semantics",
+      "node_id": "n203",
+      "source_type": "ramp",
+      "connected_edge_count": 1,
+      "connected_edge_count_semantics": "schema_minimum_placeholder_not_confirmed_topology"
+    },
+    {
+      "type": "placeholder_connected_edge_count_semantics",
+      "node_id": "n207",
+      "source_type": "ramp",
+      "connected_edge_count": 1,
+      "connected_edge_count_semantics": "schema_minimum_placeholder_not_confirmed_topology"
+    },
+    {
+      "type": "object_without_anchor",
+      "object_id": "o624"
+    },
+    {
+      "type": "object_without_anchor",
+      "object_id": "o644"
+    }
+  ],
+  "errors": []
+}

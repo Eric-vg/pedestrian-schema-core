@@ -1,0 +1,3612 @@
+{
+  "input_feature_stats": {
+    "network": {
+      "feature_count": 233,
+      "geometry_type_counts": {
+        "LineString": 233
+      },
+      "source_type_counts": {
+        "footpath": 160,
+        "crossing": 71,
+        "fp\\": 1,
+        "f": 1
+      }
+    },
+    "polygons": {
+      "feature_count": 162,
+      "geometry_type_counts": {
+        "Polygon": 162
+      },
+      "source_type_counts": {
+        "footpath": 160,
+        "fp\\": 1,
+        "f": 1
+      }
+    },
+    "points": {
+      "feature_count": 990,
+      "geometry_type_counts": {
+        "Point": 990
+      },
+      "source_type_counts": {
+        "ramp": 107,
+        "crossing": 36,
+        "pole": 486,
+        "tree": 232,
+        "bin": 51,
+        "bench": 62,
+        "bike_rack": 16
+      }
+    }
+  },
+  "mapping_counts": {
+    "Node": {
+      "curb_ramp_node": 144,
+      "intersection": 24,
+      "other": 38,
+      "dead_end": 2
+    },
+    "Edge": {
+      "footpath": 162,
+      "crossing": 71
+    },
+    "Zone": {
+      "footpath_area": 162
+    },
+    "Object": {
+      "pole": 486,
+      "tree": 232,
+      "bin": 51,
+      "bench": 62,
+      "bike_rack": 16
+    }
+  },
+  "source_to_target_counts": {
+    "network_lines": {
+      "footpath": 162,
+      "crossing": 71
+    },
+    "polygons": {
+      "footpath_area": 162
+    },
+    "points": {
+      "node_curb_ramp_node": 11,
+      "node_placeholder_other": 5,
+      "pole": 486,
+      "tree": 232,
+      "bin": 51,
+      "bench": 62,
+      "bike_rack": 16
+    }
+  },
+  "dirty_type_normalization_counts": {
+    "fp\\->footpath": 1,
+    "f->footpath": 1,
+    "fp\\->footpath_area": 1,
+    "f->footpath_area": 1
+  },
+  "conservative_mappings": {
+    "ramp_near_crossing_endpoint_merge": 88,
+    "ramp_upgraded_to_curb_ramp_node": 11,
+    "ramp_point_placeholder_nodes": 5,
+    "ramp_merged_to_existing_node": 3,
+    "crossing_point_not_emitted_as_node": 34,
+    "crossing_point_used_as_auxiliary_evidence": 36,
+    "crossing_point_near_crossing_edge_merge": 2
+  },
+  "node_classification_summary": {
+    "topology_derived_curb_ramp_node": 133,
+    "topology_derived_intersection": 24,
+    "topology_derived_other": 33,
+    "topology_derived_dead_end": 2,
+    "point_derived_curb_ramp_node": 11,
+    "point_derived_other": 5,
+    "final_node_subtype_counts": {
+      "curb_ramp_node": 144,
+      "intersection": 24,
+      "other": 38,
+      "dead_end": 2
+    }
+  },
+  "polygon_edge_binding": {
+    "metadata_exact_6dp": 162,
+    "metadata_exact_6dp_unique": 162,
+    "metadata_exact_match_6dp": 162,
+    "matched": 162,
+    "total_polygons": 162,
+    "success_rate": 1.0
+  },
+  "object_anchor_stats": {
+    "zone_anchor_count": 845,
+    "zone_contains_count": 449,
+    "edge_anchor_count": 830
+  },
+  "edge_length_comparison": {
+    "total_edges": 233,
+    "source_length_count": 233,
+    "geometry_length_written_count": 233,
+    "derived_total_m": 8406.56102815561,
+    "source_total_m": 10124.712079163499,
+    "absolute_difference_total_m": 1718.1510510078963,
+    "max_absolute_difference_m": 31.465663154521195,
+    "mean_absolute_difference_m": 7.374038845527452
+  },
+  "edge_length_sources": {
+    "geometry": 233
+  },
+  "polygon_edge_binding_review": [
+    {
+      "polygon_source_id": "0",
+      "zone_id": "z1",
+      "chosen_corresponding_edge_id": "e1",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 185.43526612358247,
+      "polygon_width": 1.9779721808739605,
+      "matched_edge_length": 185.43526612359614,
+      "matched_edge_width": 1.9779721808739605
+    },
+    {
+      "polygon_source_id": "2",
+      "zone_id": "z2",
+      "chosen_corresponding_edge_id": "e2",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 97.4467075626781,
+      "polygon_width": 3.672647306659335,
+      "matched_edge_length": 97.44670756225672,
+      "matched_edge_width": 3.672647306659335
+    },
+    {
+      "polygon_source_id": "3",
+      "zone_id": "z3",
+      "chosen_corresponding_edge_id": "e3",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 33.15540671384196,
+      "polygon_width": 5.06923083227707,
+      "matched_edge_length": 33.155406713992534,
+      "matched_edge_width": 5.06923083227707
+    },
+    {
+      "polygon_source_id": "4",
+      "zone_id": "z4",
+      "chosen_corresponding_edge_id": "e4",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 90.45067167782402,
+      "polygon_width": 2.96112077182065,
+      "matched_edge_length": 90.45067167771437,
+      "matched_edge_width": 2.96112077182065
+    },
+    {
+      "polygon_source_id": "6",
+      "zone_id": "z5",
+      "chosen_corresponding_edge_id": "e5",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 41.6147744924229,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 41.61477449606679,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": "8",
+      "zone_id": "z6",
+      "chosen_corresponding_edge_id": "e6",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 10.259617890305105,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 10.259617890305105,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": "9",
+      "zone_id": "z7",
+      "chosen_corresponding_edge_id": "e7",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 13.251586898101277,
+      "polygon_width": 1.9151982818600763,
+      "matched_edge_length": 13.251586898565272,
+      "matched_edge_width": 1.9151982818600763
+    },
+    {
+      "polygon_source_id": "10",
+      "zone_id": "z8",
+      "chosen_corresponding_edge_id": "e8",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 117.27302221556349,
+      "polygon_width": 3.2848306216905154,
+      "matched_edge_length": 117.27302221550718,
+      "matched_edge_width": 3.2848306216905154
+    },
+    {
+      "polygon_source_id": "11",
+      "zone_id": "z9",
+      "chosen_corresponding_edge_id": "e9",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 58.63735349069065,
+      "polygon_width": 3.7640980791022667,
+      "matched_edge_length": 58.63735349069065,
+      "matched_edge_width": 3.7640980791022667
+    },
+    {
+      "polygon_source_id": "12",
+      "zone_id": "z10",
+      "chosen_corresponding_edge_id": "e10",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 74.78988472635675,
+      "polygon_width": 4.317640007107686,
+      "matched_edge_length": 74.78988472613021,
+      "matched_edge_width": 4.317640007107686
+    },
+    {
+      "polygon_source_id": "13",
+      "zone_id": "z11",
+      "chosen_corresponding_edge_id": "e11",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 9.03770135077173,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 9.03770135077173,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": "14",
+      "zone_id": "z12",
+      "chosen_corresponding_edge_id": "e12",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 179.103748123831,
+      "polygon_width": 5.301791943135111,
+      "matched_edge_length": 179.103748123831,
+      "matched_edge_width": 5.301791943135111
+    },
+    {
+      "polygon_source_id": "15",
+      "zone_id": "z13",
+      "chosen_corresponding_edge_id": "e13",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 98.80494532186648,
+      "polygon_width": 5.160203723515915,
+      "matched_edge_length": 98.80494532177008,
+      "matched_edge_width": 5.160203723515915
+    },
+    {
+      "polygon_source_id": "16",
+      "zone_id": "z14",
+      "chosen_corresponding_edge_id": "e14",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 120.6662220147467,
+      "polygon_width": 5.3221141149989775,
+      "matched_edge_length": 120.66622201293147,
+      "matched_edge_width": 5.3221141149989775
+    },
+    {
+      "polygon_source_id": "17",
+      "zone_id": "z15",
+      "chosen_corresponding_edge_id": "e15",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 43.61564889705591,
+      "polygon_width": 2.878319921688628,
+      "matched_edge_length": 43.615648897201865,
+      "matched_edge_width": 2.878319921688628
+    },
+    {
+      "polygon_source_id": "18",
+      "zone_id": "z16",
+      "chosen_corresponding_edge_id": "e16",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 150.52179507982967,
+      "polygon_width": 3.8694088886251237,
+      "matched_edge_length": 150.5217950786875,
+      "matched_edge_width": 3.8694088886251237
+    },
+    {
+      "polygon_source_id": "19",
+      "zone_id": "z17",
+      "chosen_corresponding_edge_id": "e17",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 64.73330418846521,
+      "polygon_width": 2.739565306259454,
+      "matched_edge_length": 64.73330418845032,
+      "matched_edge_width": 2.739565306259454
+    },
+    {
+      "polygon_source_id": "20",
+      "zone_id": "z18",
+      "chosen_corresponding_edge_id": "e18",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 69.56538310485624,
+      "polygon_width": 5.608118601349537,
+      "matched_edge_length": 69.56538310376152,
+      "matched_edge_width": 5.608118601349537
+    },
+    {
+      "polygon_source_id": "21",
+      "zone_id": "z19",
+      "chosen_corresponding_edge_id": "e19",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 73.32952072357803,
+      "polygon_width": 5.543372226513753,
+      "matched_edge_length": 73.3295207238444,
+      "matched_edge_width": 5.543372226513753
+    },
+    {
+      "polygon_source_id": "22",
+      "zone_id": "z20",
+      "chosen_corresponding_edge_id": "e20",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 143.05972545954884,
+      "polygon_width": 4.809869749098098,
+      "matched_edge_length": 143.0597254593128,
+      "matched_edge_width": 4.809869749098098
+    },
+    {
+      "polygon_source_id": "23",
+      "zone_id": "z21",
+      "chosen_corresponding_edge_id": "e21",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 80.64147253901817,
+      "polygon_width": 2.6656499431235767,
+      "matched_edge_length": 80.64147253874037,
+      "matched_edge_width": 2.6656499431235767
+    },
+    {
+      "polygon_source_id": "24",
+      "zone_id": "z22",
+      "chosen_corresponding_edge_id": "e22",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 56.61679383928314,
+      "polygon_width": 6.510914281988407,
+      "matched_edge_length": 56.61679383962029,
+      "matched_edge_width": 6.510914281988407
+    },
+    {
+      "polygon_source_id": "26",
+      "zone_id": "z23",
+      "chosen_corresponding_edge_id": "e23",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 8.829323748662533,
+      "polygon_width": 1.1788621202838407,
+      "matched_edge_length": 8.829323750676473,
+      "matched_edge_width": 1.1788621202838407
+    },
+    {
+      "polygon_source_id": "28",
+      "zone_id": "z24",
+      "chosen_corresponding_edge_id": "e24",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 93.0737790845947,
+      "polygon_width": 1.9664558604226912,
+      "matched_edge_length": 93.07377908149085,
+      "matched_edge_width": 1.9664558604226912
+    },
+    {
+      "polygon_source_id": "30",
+      "zone_id": "z25",
+      "chosen_corresponding_edge_id": "e25",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 172.66312491587743,
+      "polygon_width": 1.48651240645402,
+      "matched_edge_length": 172.66312491253183,
+      "matched_edge_width": 1.48651240645402
+    },
+    {
+      "polygon_source_id": "31",
+      "zone_id": "z26",
+      "chosen_corresponding_edge_id": "e26",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 75.91309066452803,
+      "polygon_width": 3.8215521382628745,
+      "matched_edge_length": 75.91309066501137,
+      "matched_edge_width": 3.8215521382628745
+    },
+    {
+      "polygon_source_id": "33",
+      "zone_id": "z27",
+      "chosen_corresponding_edge_id": "e27",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 30.311674332619994,
+      "polygon_width": 2.3762123236363997,
+      "matched_edge_length": 30.31167433304529,
+      "matched_edge_width": 2.3762123236363997
+    },
+    {
+      "polygon_source_id": "34",
+      "zone_id": "z28",
+      "chosen_corresponding_edge_id": "e28",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 68.57721581992114,
+      "polygon_width": 1.672764083533786,
+      "matched_edge_length": 68.57721581984012,
+      "matched_edge_width": 1.672764083533786
+    },
+    {
+      "polygon_source_id": "35",
+      "zone_id": "z29",
+      "chosen_corresponding_edge_id": "e29",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 5.57297439003164,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 5.5729743891482935,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": "39",
+      "zone_id": "z30",
+      "chosen_corresponding_edge_id": "e30",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 11.746952641949775,
+      "polygon_width": 0.3787934122096726,
+      "matched_edge_length": 11.746952641656156,
+      "matched_edge_width": 0.3787934122096726
+    },
+    {
+      "polygon_source_id": "41",
+      "zone_id": "z31",
+      "chosen_corresponding_edge_id": "e31",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 23.753598736556306,
+      "polygon_width": 3.8886254517294523,
+      "matched_edge_length": 23.753598739197567,
+      "matched_edge_width": 3.8886254517294523
+    },
+    {
+      "polygon_source_id": "42",
+      "zone_id": "z32",
+      "chosen_corresponding_edge_id": "e32",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 50.045312905409766,
+      "polygon_width": 3.3155514914587503,
+      "matched_edge_length": 50.045312905409766,
+      "matched_edge_width": 3.3155514914587503
+    },
+    {
+      "polygon_source_id": "43",
+      "zone_id": "z33",
+      "chosen_corresponding_edge_id": "e33",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 80.62537511823652,
+      "polygon_width": 5.979704889294139,
+      "matched_edge_length": 80.6253751209237,
+      "matched_edge_width": 5.979704889294139
+    },
+    {
+      "polygon_source_id": "45",
+      "zone_id": "z34",
+      "chosen_corresponding_edge_id": "e34",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 162.86910870224432,
+      "polygon_width": 4.300427094028279,
+      "matched_edge_length": 162.86910870150115,
+      "matched_edge_width": 4.300427094028279
+    },
+    {
+      "polygon_source_id": "46",
+      "zone_id": "z35",
+      "chosen_corresponding_edge_id": "e35",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 42.04435208889161,
+      "polygon_width": 3.59397762136387,
+      "matched_edge_length": 42.04435208888893,
+      "matched_edge_width": 3.59397762136387
+    },
+    {
+      "polygon_source_id": "47",
+      "zone_id": "z36",
+      "chosen_corresponding_edge_id": "e36",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 180.39828845574394,
+      "polygon_width": 4.036678895985535,
+      "matched_edge_length": 180.39828845574394,
+      "matched_edge_width": 4.036678895985535
+    },
+    {
+      "polygon_source_id": "48",
+      "zone_id": "z37",
+      "chosen_corresponding_edge_id": "e37",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 154.72764229052183,
+      "polygon_width": 4.610037438612698,
+      "matched_edge_length": 154.72764229212893,
+      "matched_edge_width": 4.610037438612698
+    },
+    {
+      "polygon_source_id": "49",
+      "zone_id": "z38",
+      "chosen_corresponding_edge_id": "e38",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 118.89792620865207,
+      "polygon_width": 3.874511089676257,
+      "matched_edge_length": 118.89792620875423,
+      "matched_edge_width": 3.874511089676257
+    },
+    {
+      "polygon_source_id": "50",
+      "zone_id": "z39",
+      "chosen_corresponding_edge_id": "e39",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 52.026784762287804,
+      "polygon_width": 7.348872697766409,
+      "matched_edge_length": 52.026784761533044,
+      "matched_edge_width": 7.348872697766409
+    },
+    {
+      "polygon_source_id": "51",
+      "zone_id": "z40",
+      "chosen_corresponding_edge_id": "e40",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 146.28635259087926,
+      "polygon_width": 2.7872025664870943,
+      "matched_edge_length": 146.28635259140722,
+      "matched_edge_width": 2.7872025664870943
+    },
+    {
+      "polygon_source_id": "53",
+      "zone_id": "z41",
+      "chosen_corresponding_edge_id": "e41",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 56.31769399055067,
+      "polygon_width": 4.561868206036568,
+      "matched_edge_length": 56.31769399055067,
+      "matched_edge_width": 4.561868206036568
+    },
+    {
+      "polygon_source_id": "54",
+      "zone_id": "z42",
+      "chosen_corresponding_edge_id": "e42",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 54.25080303226875,
+      "polygon_width": 3.663203133155899,
+      "matched_edge_length": 54.2508030343369,
+      "matched_edge_width": 3.663203133155899
+    },
+    {
+      "polygon_source_id": "55",
+      "zone_id": "z43",
+      "chosen_corresponding_edge_id": "e43",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 67.97979231949915,
+      "polygon_width": 2.750866495720079,
+      "matched_edge_length": 67.97979231965735,
+      "matched_edge_width": 2.750866495720079
+    },
+    {
+      "polygon_source_id": "56",
+      "zone_id": "z44",
+      "chosen_corresponding_edge_id": "e44",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 40.90148360388133,
+      "polygon_width": 4.198970572000144,
+      "matched_edge_length": 40.90148360571064,
+      "matched_edge_width": 4.198970572000144
+    },
+    {
+      "polygon_source_id": "57",
+      "zone_id": "z45",
+      "chosen_corresponding_edge_id": "e45",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 135.24732930653312,
+      "polygon_width": 1.9878505554647767,
+      "matched_edge_length": 135.24732930915002,
+      "matched_edge_width": 1.9878505554647767
+    },
+    {
+      "polygon_source_id": "58",
+      "zone_id": "z46",
+      "chosen_corresponding_edge_id": "e46",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 73.56965041047725,
+      "polygon_width": 3.666808361278858,
+      "matched_edge_length": 73.56965041037999,
+      "matched_edge_width": 3.666808361278858
+    },
+    {
+      "polygon_source_id": "59",
+      "zone_id": "z47",
+      "chosen_corresponding_edge_id": "e47",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 65.88135944568404,
+      "polygon_width": 5.86334478417041,
+      "matched_edge_length": 65.88135944672123,
+      "matched_edge_width": 5.86334478417041
+    },
+    {
+      "polygon_source_id": "61",
+      "zone_id": "z48",
+      "chosen_corresponding_edge_id": "e48",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 7.505598076667941,
+      "polygon_width": 0.7801149450724423,
+      "matched_edge_length": 7.505598075490275,
+      "matched_edge_width": 0.7801149450724423
+    },
+    {
+      "polygon_source_id": "64",
+      "zone_id": "z49",
+      "chosen_corresponding_edge_id": "e49",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 111.9835871398757,
+      "polygon_width": 2.024376052870521,
+      "matched_edge_length": 111.9835871398757,
+      "matched_edge_width": 2.024376052870521
+    },
+    {
+      "polygon_source_id": "65",
+      "zone_id": "z50",
+      "chosen_corresponding_edge_id": "e50",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 42.88363320150992,
+      "polygon_width": 5.451247629420716,
+      "matched_edge_length": 42.88363320159045,
+      "matched_edge_width": 5.451247629420716
+    },
+    {
+      "polygon_source_id": "66",
+      "zone_id": "z51",
+      "chosen_corresponding_edge_id": "e51",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 5.630963898061771,
+      "polygon_width": 5.5970949962513,
+      "matched_edge_length": 5.63096389964655,
+      "matched_edge_width": 5.5970949962513
+    },
+    {
+      "polygon_source_id": "69",
+      "zone_id": "z52",
+      "chosen_corresponding_edge_id": "e52",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 71.05710172776762,
+      "polygon_width": 4.718968818091491,
+      "matched_edge_length": 71.0571017268146,
+      "matched_edge_width": 4.718968818091491
+    },
+    {
+      "polygon_source_id": "70",
+      "zone_id": "z53",
+      "chosen_corresponding_edge_id": "e53",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 52.06018148250941,
+      "polygon_width": 1.1021863141216326,
+      "matched_edge_length": 52.06018148267103,
+      "matched_edge_width": 1.1021863141216326
+    },
+    {
+      "polygon_source_id": "71",
+      "zone_id": "z54",
+      "chosen_corresponding_edge_id": "e54",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 20.171676685789222,
+      "polygon_width": 2.2592013110577835,
+      "matched_edge_length": 20.17167668532427,
+      "matched_edge_width": 2.2592013110577835
+    },
+    {
+      "polygon_source_id": "72",
+      "zone_id": "z55",
+      "chosen_corresponding_edge_id": "e55",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 27.869675137380778,
+      "polygon_width": 3.7853112893801253,
+      "matched_edge_length": 27.869675136222305,
+      "matched_edge_width": 3.7853112893801253
+    },
+    {
+      "polygon_source_id": "73",
+      "zone_id": "z56",
+      "chosen_corresponding_edge_id": "e56",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 28.257255734554285,
+      "polygon_width": 3.7625625794148148,
+      "matched_edge_length": 28.25725573443376,
+      "matched_edge_width": 3.7625625794148148
+    },
+    {
+      "polygon_source_id": "76",
+      "zone_id": "z57",
+      "chosen_corresponding_edge_id": "e57",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 3.2864198779058973,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 3.286419878151853,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": "77",
+      "zone_id": "z58",
+      "chosen_corresponding_edge_id": "e58",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 147.25643057854037,
+      "polygon_width": 4.3203807810277,
+      "matched_edge_length": 147.2564305790373,
+      "matched_edge_width": 4.3203807810277
+    },
+    {
+      "polygon_source_id": "78",
+      "zone_id": "z59",
+      "chosen_corresponding_edge_id": "e59",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 70.93290886185619,
+      "polygon_width": 2.3339731412928084,
+      "matched_edge_length": 70.93290885685644,
+      "matched_edge_width": 2.3339731412928084
+    },
+    {
+      "polygon_source_id": "79",
+      "zone_id": "z60",
+      "chosen_corresponding_edge_id": "e60",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 87.36969749801902,
+      "polygon_width": 3.325105590827537,
+      "matched_edge_length": 87.36969749816738,
+      "matched_edge_width": 3.325105590827537
+    },
+    {
+      "polygon_source_id": "80",
+      "zone_id": "z61",
+      "chosen_corresponding_edge_id": "e61",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 144.41376979588043,
+      "polygon_width": 1.4307758136984867,
+      "matched_edge_length": 144.41376979588043,
+      "matched_edge_width": 1.4307758136984867
+    },
+    {
+      "polygon_source_id": "83",
+      "zone_id": "z62",
+      "chosen_corresponding_edge_id": "e62",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 172.5053263773399,
+      "polygon_width": 1.6537391142815605,
+      "matched_edge_length": 172.50532637733968,
+      "matched_edge_width": 1.6537391142815605
+    },
+    {
+      "polygon_source_id": "84",
+      "zone_id": "z63",
+      "chosen_corresponding_edge_id": "e63",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 117.85187505958692,
+      "polygon_width": 1.6737804052828922,
+      "matched_edge_length": 117.85187505587078,
+      "matched_edge_width": 1.6737804052828922
+    },
+    {
+      "polygon_source_id": "85",
+      "zone_id": "z64",
+      "chosen_corresponding_edge_id": "e64",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 68.12529099491258,
+      "polygon_width": 2.356312151453029,
+      "matched_edge_length": 68.12529099874047,
+      "matched_edge_width": 2.356312151453029
+    },
+    {
+      "polygon_source_id": "86",
+      "zone_id": "z65",
+      "chosen_corresponding_edge_id": "e65",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 31.913187295846093,
+      "polygon_width": 1.3914952791966506,
+      "matched_edge_length": 31.91318729593454,
+      "matched_edge_width": 1.3914952791966506
+    },
+    {
+      "polygon_source_id": "87",
+      "zone_id": "z66",
+      "chosen_corresponding_edge_id": "e66",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 103.92674549012136,
+      "polygon_width": 1.2000494875070498,
+      "matched_edge_length": 103.92674549003752,
+      "matched_edge_width": 1.2000494875070498
+    },
+    {
+      "polygon_source_id": "88",
+      "zone_id": "z67",
+      "chosen_corresponding_edge_id": "e67",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 45.19462311317114,
+      "polygon_width": 2.0736882942695924,
+      "matched_edge_length": 45.19462311317114,
+      "matched_edge_width": 2.0736882942695924
+    },
+    {
+      "polygon_source_id": "89",
+      "zone_id": "z68",
+      "chosen_corresponding_edge_id": "e68",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 88.7359288732724,
+      "polygon_width": 1.4084900941096374,
+      "matched_edge_length": 88.7359288732724,
+      "matched_edge_width": 1.4084900941096374
+    },
+    {
+      "polygon_source_id": "90",
+      "zone_id": "z69",
+      "chosen_corresponding_edge_id": "e69",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 33.789185939226,
+      "polygon_width": 1.41513809254494,
+      "matched_edge_length": 33.7891859391361,
+      "matched_edge_width": 1.41513809254494
+    },
+    {
+      "polygon_source_id": "91",
+      "zone_id": "z70",
+      "chosen_corresponding_edge_id": "e70",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 128.3123518866737,
+      "polygon_width": 1.8428938575823606,
+      "matched_edge_length": 128.3123518903218,
+      "matched_edge_width": 1.8428938575823606
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z71",
+      "chosen_corresponding_edge_id": "e73",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 2.167799523872693,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 2.167799523408882,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z72",
+      "chosen_corresponding_edge_id": "e74",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 2.5374989546835423,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 2.5374989546835423,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z73",
+      "chosen_corresponding_edge_id": "e76",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 3.9388757193536366,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 3.938875719192625,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z74",
+      "chosen_corresponding_edge_id": "e78",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 53.87315887915277,
+      "polygon_width": 4.682549423598877,
+      "matched_edge_length": 53.8731588794963,
+      "matched_edge_width": 4.682549423598877
+    },
+    {
+      "polygon_source_id": "13",
+      "zone_id": "z75",
+      "chosen_corresponding_edge_id": "e79",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 19.603186026231725,
+      "polygon_width": 4.924109731769843,
+      "matched_edge_length": 19.603186026107615,
+      "matched_edge_width": 4.924109731769843
+    },
+    {
+      "polygon_source_id": "2",
+      "zone_id": "z76",
+      "chosen_corresponding_edge_id": "e80",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 31.978770458573322,
+      "polygon_width": 3.35738592815677,
+      "matched_edge_length": 31.97877045699864,
+      "matched_edge_width": 3.35738592815677
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z77",
+      "chosen_corresponding_edge_id": "e82",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 7.158588282578368,
+      "polygon_width": 2.639512693349358,
+      "matched_edge_length": 7.158588282010467,
+      "matched_edge_width": 2.639512693349358
+    },
+    {
+      "polygon_source_id": "32",
+      "zone_id": "z78",
+      "chosen_corresponding_edge_id": "e85",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 85.44470161375705,
+      "polygon_width": 2.8241827912211273,
+      "matched_edge_length": 85.44470161435315,
+      "matched_edge_width": 2.8241827912211273
+    },
+    {
+      "polygon_source_id": "1",
+      "zone_id": "z79",
+      "chosen_corresponding_edge_id": "e86",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 66.0791466907535,
+      "polygon_width": 2.9589523981761006,
+      "matched_edge_length": 66.0791466907539,
+      "matched_edge_width": 2.9589523981761006
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z80",
+      "chosen_corresponding_edge_id": "e87",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 4.224439770399781,
+      "polygon_width": 2.0707420789123336,
+      "matched_edge_length": 4.2244397699341185,
+      "matched_edge_width": 2.0707420789123336
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z81",
+      "chosen_corresponding_edge_id": "e88",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 2.2318638008139575,
+      "polygon_width": 2.6911464128977487,
+      "matched_edge_length": 2.2318638008139575,
+      "matched_edge_width": 2.6911464128977487
+    },
+    {
+      "polygon_source_id": "13",
+      "zone_id": "z82",
+      "chosen_corresponding_edge_id": "e95",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 7.565370542541769,
+      "polygon_width": 5.30115250706784,
+      "matched_edge_length": 7.565370542564956,
+      "matched_edge_width": 5.30115250706784
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z83",
+      "chosen_corresponding_edge_id": "e96",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 2.790050372535535,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 2.790050374031186,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": "5",
+      "zone_id": "z84",
+      "chosen_corresponding_edge_id": "e98",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 5.234298285532858,
+      "polygon_width": 0.4881556369894412,
+      "matched_edge_length": 5.234298289002652,
+      "matched_edge_width": 0.4881556369894412
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z85",
+      "chosen_corresponding_edge_id": "e99",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 2.378119946405741,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 2.378119946405741,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z86",
+      "chosen_corresponding_edge_id": "e100",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "fp\\",
+      "polygon_distance": 31.001515054350136,
+      "polygon_width": 2.513488680174746,
+      "matched_edge_length": 31.001515054664665,
+      "matched_edge_width": 2.513488680174746
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z87",
+      "chosen_corresponding_edge_id": "e102",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 3.9935047055413504,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 3.9935047068856653,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z88",
+      "chosen_corresponding_edge_id": "e104",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 7.721903105932256,
+      "polygon_width": 2.3284331440338693,
+      "matched_edge_length": 7.721903105864085,
+      "matched_edge_width": 2.3284331440338693
+    },
+    {
+      "polygon_source_id": "89",
+      "zone_id": "z89",
+      "chosen_corresponding_edge_id": "e106",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 6.742600513753222,
+      "polygon_width": 2.050339424015786,
+      "matched_edge_length": 6.742600513753222,
+      "matched_edge_width": 2.050339424015786
+    },
+    {
+      "polygon_source_id": "91",
+      "zone_id": "z90",
+      "chosen_corresponding_edge_id": "e107",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 3.557227683299372,
+      "polygon_width": 1.1852106532049451,
+      "matched_edge_length": 3.5572276795882103,
+      "matched_edge_width": 1.1852106532049451
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z91",
+      "chosen_corresponding_edge_id": "e109",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 7.251419367969493,
+      "polygon_width": 1.8548089408892419,
+      "matched_edge_length": 7.251419367969493,
+      "matched_edge_width": 1.8548089408892419
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z92",
+      "chosen_corresponding_edge_id": "e110",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 3.11372875314775,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 3.1137287536124143,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": "5",
+      "zone_id": "z93",
+      "chosen_corresponding_edge_id": "e111",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 135.48721030696714,
+      "polygon_width": 2.4867201369291534,
+      "matched_edge_length": 135.48721030696714,
+      "matched_edge_width": 2.4867201369291534
+    },
+    {
+      "polygon_source_id": "35",
+      "zone_id": "z94",
+      "chosen_corresponding_edge_id": "e113",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 49.48617351744108,
+      "polygon_width": 4.409892375716984,
+      "matched_edge_length": 49.48617351782633,
+      "matched_edge_width": 4.409892375716984
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z95",
+      "chosen_corresponding_edge_id": "e114",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 1.9266617595324922,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 1.9266617593975952,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z96",
+      "chosen_corresponding_edge_id": "e116",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "f",
+      "polygon_distance": 15.414971627289098,
+      "polygon_width": 3.4460687425948655,
+      "matched_edge_length": 15.414971624890011,
+      "matched_edge_width": 3.4460687425948655
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z97",
+      "chosen_corresponding_edge_id": "e117",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 14.90114819968288,
+      "polygon_width": 3.4460687425948655,
+      "matched_edge_length": 14.90114819968288,
+      "matched_edge_width": 3.4460687425948655
+    },
+    {
+      "polygon_source_id": "8",
+      "zone_id": "z98",
+      "chosen_corresponding_edge_id": "e118",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 121.37257650873921,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 121.37257650873921,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": "39",
+      "zone_id": "z99",
+      "chosen_corresponding_edge_id": "e119",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 121.42395142267823,
+      "polygon_width": 4.038998509245658,
+      "matched_edge_length": 121.42395142297165,
+      "matched_edge_width": 4.038998509245658
+    },
+    {
+      "polygon_source_id": "72",
+      "zone_id": "z100",
+      "chosen_corresponding_edge_id": "e122",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 118.29256959929667,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 118.29256959927937,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z101",
+      "chosen_corresponding_edge_id": "e123",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 3.7061956087838417,
+      "polygon_width": 5.29444919703656,
+      "matched_edge_length": 3.706195609517646,
+      "matched_edge_width": 5.29444919703656
+    },
+    {
+      "polygon_source_id": "8",
+      "zone_id": "z102",
+      "chosen_corresponding_edge_id": "e124",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 10.708154941896863,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 10.708154941896863,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": "39",
+      "zone_id": "z103",
+      "chosen_corresponding_edge_id": "e125",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 10.729457767226009,
+      "polygon_width": 5.712580345986069,
+      "matched_edge_length": 10.729457767226009,
+      "matched_edge_width": 5.712580345986069
+    },
+    {
+      "polygon_source_id": "23",
+      "zone_id": "z104",
+      "chosen_corresponding_edge_id": "e127",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 14.15848747232546,
+      "polygon_width": 4.874475768110301,
+      "matched_edge_length": 14.158487475764156,
+      "matched_edge_width": 4.874475768110301
+    },
+    {
+      "polygon_source_id": "23",
+      "zone_id": "z105",
+      "chosen_corresponding_edge_id": "e130",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 81.1380113850088,
+      "polygon_width": 4.535068071178656,
+      "matched_edge_length": 81.1380113808499,
+      "matched_edge_width": 4.535068071178656
+    },
+    {
+      "polygon_source_id": "58",
+      "zone_id": "z106",
+      "chosen_corresponding_edge_id": "e131",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 83.8461139444378,
+      "polygon_width": 4.9928282715803824,
+      "matched_edge_length": 83.8461139444378,
+      "matched_edge_width": 4.9928282715803824
+    },
+    {
+      "polygon_source_id": "23",
+      "zone_id": "z107",
+      "chosen_corresponding_edge_id": "e136",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 11.197100202902435,
+      "polygon_width": 3.3417874576187776,
+      "matched_edge_length": 11.197100202902435,
+      "matched_edge_width": 3.3417874576187776
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z108",
+      "chosen_corresponding_edge_id": "e137",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 6.975904051313329,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 6.975904051313329,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z109",
+      "chosen_corresponding_edge_id": "e139",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 6.648165305755006,
+      "polygon_width": 6.476076530126495,
+      "matched_edge_length": 6.648165302031829,
+      "matched_edge_width": 6.476076530126495
+    },
+    {
+      "polygon_source_id": "19",
+      "zone_id": "z110",
+      "chosen_corresponding_edge_id": "e143",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 7.37118196922265,
+      "polygon_width": 2.4390905479886578,
+      "matched_edge_length": 7.371181968766775,
+      "matched_edge_width": 2.4390905479886578
+    },
+    {
+      "polygon_source_id": "26",
+      "zone_id": "z111",
+      "chosen_corresponding_edge_id": "e145",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 156.65679091754023,
+      "polygon_width": 2.383327691733753,
+      "matched_edge_length": 156.6567909179814,
+      "matched_edge_width": 2.383327691733753
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z112",
+      "chosen_corresponding_edge_id": "e146",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 4.524470989567784,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 4.524470989567784,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": "61",
+      "zone_id": "z113",
+      "chosen_corresponding_edge_id": "e148",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 107.30060675938265,
+      "polygon_width": 3.6243939901114706,
+      "matched_edge_length": 107.30060676048791,
+      "matched_edge_width": 3.6243939901114706
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z114",
+      "chosen_corresponding_edge_id": "e149",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 4.764353321823027,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 4.76435332487135,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": "55",
+      "zone_id": "z115",
+      "chosen_corresponding_edge_id": "e150",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 10.206841036887564,
+      "polygon_width": 0.5033773239036567,
+      "matched_edge_length": 10.206841036887564,
+      "matched_edge_width": 0.5033773239036567
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z116",
+      "chosen_corresponding_edge_id": "e151",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 4.766094051218525,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 4.766094051218525,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z117",
+      "chosen_corresponding_edge_id": "e154",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 5.95338627368461,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 5.95338627368461,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z118",
+      "chosen_corresponding_edge_id": "e155",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 9.356432927357163,
+      "polygon_width": 7.592202023597714,
+      "matched_edge_length": 9.356432930861265,
+      "matched_edge_width": 7.592202023597714
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z119",
+      "chosen_corresponding_edge_id": "e158",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 4.572992207072594,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 4.572992202648265,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": "34",
+      "zone_id": "z120",
+      "chosen_corresponding_edge_id": "e159",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 62.63384604037215,
+      "polygon_width": 3.0048844257573593,
+      "matched_edge_length": 62.633846040645174,
+      "matched_edge_width": 3.0048844257573593
+    },
+    {
+      "polygon_source_id": "17",
+      "zone_id": "z121",
+      "chosen_corresponding_edge_id": "e162",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 103.19635442166798,
+      "polygon_width": 3.8471893567261617,
+      "matched_edge_length": 103.19635442181595,
+      "matched_edge_width": 3.8471893567261617
+    },
+    {
+      "polygon_source_id": "50",
+      "zone_id": "z122",
+      "chosen_corresponding_edge_id": "e163",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 39.45848271163097,
+      "polygon_width": 4.613884348454166,
+      "matched_edge_length": 39.45848271210394,
+      "matched_edge_width": 4.613884348454166
+    },
+    {
+      "polygon_source_id": "22",
+      "zone_id": "z123",
+      "chosen_corresponding_edge_id": "e165",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 9.340224897747962,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 9.3402248947916,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z124",
+      "chosen_corresponding_edge_id": "e167",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 3.1325006275549683,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 3.132500627627895,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z125",
+      "chosen_corresponding_edge_id": "e169",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 2.994428033036268,
+      "polygon_width": 1.9841553524476632,
+      "matched_edge_length": 2.994428033036268,
+      "matched_edge_width": 1.9841553524476632
+    },
+    {
+      "polygon_source_id": "45",
+      "zone_id": "z126",
+      "chosen_corresponding_edge_id": "e170",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 9.251436912141239,
+      "polygon_width": 4.156623019089162,
+      "matched_edge_length": 9.251436913272851,
+      "matched_edge_width": 4.156623019089162
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z127",
+      "chosen_corresponding_edge_id": "e173",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 3.1356178563919426,
+      "polygon_width": 1.4773803980185911,
+      "matched_edge_length": 3.1356178563919426,
+      "matched_edge_width": 1.4773803980185911
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z128",
+      "chosen_corresponding_edge_id": "e174",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 3.922449571860689,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 3.922449571462719,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z129",
+      "chosen_corresponding_edge_id": "e175",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 4.524580286737662,
+      "polygon_width": 1.4773803980185911,
+      "matched_edge_length": 4.524580287015352,
+      "matched_edge_width": 1.4773803980185911
+    },
+    {
+      "polygon_source_id": "76",
+      "zone_id": "z130",
+      "chosen_corresponding_edge_id": "e177",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 142.93881841997427,
+      "polygon_width": 3.649272915477464,
+      "matched_edge_length": 142.93881841972834,
+      "matched_edge_width": 3.649272915477464
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z131",
+      "chosen_corresponding_edge_id": "e178",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 4.576644909707962,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 4.576644911426197,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": "26",
+      "zone_id": "z132",
+      "chosen_corresponding_edge_id": "e179",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 107.88906998078399,
+      "polygon_width": 2.6966317324035667,
+      "matched_edge_length": 107.88906998450886,
+      "matched_edge_width": 2.6966317324035667
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z133",
+      "chosen_corresponding_edge_id": "e181",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 2.61744982756807,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 2.617449828091724,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": "14",
+      "zone_id": "z134",
+      "chosen_corresponding_edge_id": "e184",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 37.642604028529846,
+      "polygon_width": 6.310178823354429,
+      "matched_edge_length": 37.642604027644104,
+      "matched_edge_width": 6.310178823354429
+    },
+    {
+      "polygon_source_id": "47",
+      "zone_id": "z135",
+      "chosen_corresponding_edge_id": "e185",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 57.00293605298933,
+      "polygon_width": 0.8416971787175671,
+      "matched_edge_length": 57.00293605344192,
+      "matched_edge_width": 0.8416971787175671
+    },
+    {
+      "polygon_source_id": "4",
+      "zone_id": "z136",
+      "chosen_corresponding_edge_id": "e187",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 49.28200759603439,
+      "polygon_width": 4.198802176517008,
+      "matched_edge_length": 49.28200759279197,
+      "matched_edge_width": 4.198802176517008
+    },
+    {
+      "polygon_source_id": "35",
+      "zone_id": "z137",
+      "chosen_corresponding_edge_id": "e189",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 80.22885922737626,
+      "polygon_width": 4.122515128189673,
+      "matched_edge_length": 80.22885922706216,
+      "matched_edge_width": 4.122515128189673
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z138",
+      "chosen_corresponding_edge_id": "e192",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 6.8036929438751645,
+      "polygon_width": 4.375903212660638,
+      "matched_edge_length": 6.8036929444291925,
+      "matched_edge_width": 4.375903212660638
+    },
+    {
+      "polygon_source_id": "54",
+      "zone_id": "z139",
+      "chosen_corresponding_edge_id": "e195",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 11.695387240149103,
+      "polygon_width": 6.853745492257086,
+      "matched_edge_length": 11.695387240149103,
+      "matched_edge_width": 6.853745492257086
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z140",
+      "chosen_corresponding_edge_id": "e196",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 1.8320587796218073,
+      "polygon_width": 3.0458142993954085,
+      "matched_edge_length": 1.8320587796218073,
+      "matched_edge_width": 3.0458142993954085
+    },
+    {
+      "polygon_source_id": "20",
+      "zone_id": "z141",
+      "chosen_corresponding_edge_id": "e197",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 94.86025958447406,
+      "polygon_width": 5.40314865557369,
+      "matched_edge_length": 94.86025958448052,
+      "matched_edge_width": 5.40314865557369
+    },
+    {
+      "polygon_source_id": "54",
+      "zone_id": "z142",
+      "chosen_corresponding_edge_id": "e198",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 94.02721509626852,
+      "polygon_width": 5.961637518396742,
+      "matched_edge_length": 94.0272150942004,
+      "matched_edge_width": 5.961637518396742
+    },
+    {
+      "polygon_source_id": "16",
+      "zone_id": "z143",
+      "chosen_corresponding_edge_id": "e200",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 149.51234577285297,
+      "polygon_width": 5.361187092673399,
+      "matched_edge_length": 149.51234577455853,
+      "matched_edge_width": 5.361187092673399
+    },
+    {
+      "polygon_source_id": "49",
+      "zone_id": "z144",
+      "chosen_corresponding_edge_id": "e201",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 146.01583106536097,
+      "polygon_width": 4.369656457704469,
+      "matched_edge_length": 146.01583106447728,
+      "matched_edge_width": 4.369656457704469
+    },
+    {
+      "polygon_source_id": "9",
+      "zone_id": "z145",
+      "chosen_corresponding_edge_id": "e203",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 93.86733403863578,
+      "polygon_width": 2.7863268846309746,
+      "matched_edge_length": 93.86733403817178,
+      "matched_edge_width": 2.7863268846309746
+    },
+    {
+      "polygon_source_id": "41",
+      "zone_id": "z146",
+      "chosen_corresponding_edge_id": "e204",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 92.086999025587,
+      "polygon_width": 3.9551275370108123,
+      "matched_edge_length": 92.08699902527053,
+      "matched_edge_width": 3.9551275370108123
+    },
+    {
+      "polygon_source_id": "5",
+      "zone_id": "z147",
+      "chosen_corresponding_edge_id": "e206",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 9.502179977113782,
+      "polygon_width": 1.4966689787510414,
+      "matched_edge_length": 9.50217997757646,
+      "matched_edge_width": 1.4966689787510414
+    },
+    {
+      "polygon_source_id": "35",
+      "zone_id": "z148",
+      "chosen_corresponding_edge_id": "e207",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 8.692259044350413,
+      "polygon_width": 3.2146831072098454,
+      "matched_edge_length": 8.692259045108441,
+      "matched_edge_width": 3.2146831072098454
+    },
+    {
+      "polygon_source_id": "11",
+      "zone_id": "z149",
+      "chosen_corresponding_edge_id": "e209",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 30.20057969356327,
+      "polygon_width": 5.593859863580894,
+      "matched_edge_length": 30.200579690548565,
+      "matched_edge_width": 5.593859863580894
+    },
+    {
+      "polygon_source_id": "43",
+      "zone_id": "z150",
+      "chosen_corresponding_edge_id": "e211",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 16.883047594227104,
+      "polygon_width": 5.462015451639278,
+      "matched_edge_length": 16.883047595069307,
+      "matched_edge_width": 5.462015451639278
+    },
+    {
+      "polygon_source_id": "80",
+      "zone_id": "z151",
+      "chosen_corresponding_edge_id": "e213",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 26.63284571524122,
+      "polygon_width": 1.235093142198298,
+      "matched_edge_length": 26.63284571524122,
+      "matched_edge_width": 1.235093142198298
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z152",
+      "chosen_corresponding_edge_id": "e215",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 5.992464251538195,
+      "polygon_width": 2.6358222943631144,
+      "matched_edge_length": 5.992464251538195,
+      "matched_edge_width": 2.6358222943631144
+    },
+    {
+      "polygon_source_id": "0",
+      "zone_id": "z153",
+      "chosen_corresponding_edge_id": "e216",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 17.625311793503478,
+      "polygon_width": 3.2721148269399762,
+      "matched_edge_length": 17.625311793503478,
+      "matched_edge_width": 3.2721148269399762
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z154",
+      "chosen_corresponding_edge_id": "e217",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 46.37822351942408,
+      "polygon_width": 1.1544068130155454,
+      "matched_edge_length": 46.37822352338099,
+      "matched_edge_width": 1.1544068130155454
+    },
+    {
+      "polygon_source_id": "32",
+      "zone_id": "z155",
+      "chosen_corresponding_edge_id": "e218",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 39.52101237599419,
+      "polygon_width": 2.971512161379276,
+      "matched_edge_length": 39.521012375863734,
+      "matched_edge_width": 2.971512161379276
+    },
+    {
+      "polygon_source_id": "12",
+      "zone_id": "z156",
+      "chosen_corresponding_edge_id": "e220",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 62.63059129275467,
+      "polygon_width": 4.857846290262762,
+      "matched_edge_length": 62.63059129275467,
+      "matched_edge_width": 4.857846290262762
+    },
+    {
+      "polygon_source_id": "61",
+      "zone_id": "z157",
+      "chosen_corresponding_edge_id": "e223",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 141.8535588311648,
+      "polygon_width": 3.6707757352163943,
+      "matched_edge_length": 141.85355883192474,
+      "matched_edge_width": 3.6707757352163943
+    },
+    {
+      "polygon_source_id": "50",
+      "zone_id": "z158",
+      "chosen_corresponding_edge_id": "e225",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 55.820779015779664,
+      "polygon_width": 2.9342016600111887,
+      "matched_edge_length": 55.820779015779664,
+      "matched_edge_width": 2.9342016600111887
+    },
+    {
+      "polygon_source_id": "15",
+      "zone_id": "z159",
+      "chosen_corresponding_edge_id": "e227",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 58.220715750552664,
+      "polygon_width": 4.214929310117549,
+      "matched_edge_length": 58.220715750552664,
+      "matched_edge_width": 4.214929310117549
+    },
+    {
+      "polygon_source_id": "52",
+      "zone_id": "z160",
+      "chosen_corresponding_edge_id": "e229",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 36.50470011368134,
+      "polygon_width": 4.249158938277452,
+      "matched_edge_length": 36.50470011368134,
+      "matched_edge_width": 4.249158938277452
+    },
+    {
+      "polygon_source_id": "42",
+      "zone_id": "z161",
+      "chosen_corresponding_edge_id": "e231",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 48.691973345708824,
+      "polygon_width": 4.709843042357614,
+      "matched_edge_length": 48.69197334219532,
+      "matched_edge_width": 4.709843042357614
+    },
+    {
+      "polygon_source_id": null,
+      "zone_id": "z162",
+      "chosen_corresponding_edge_id": "e233",
+      "binding_method": "metadata_exact_match_6dp",
+      "source_type": "footpath",
+      "polygon_distance": 5.8008700265754145,
+      "polygon_width": 1.1804322816859028,
+      "matched_edge_length": 5.800870026319436,
+      "matched_edge_width": 1.1804322816859028
+    }
+  ],
+  "merged_point_placeholders": [
+    {
+      "source_id": "0",
+      "source_type": "ramp",
+      "merged_node_id": "n41",
+      "associated_edge_id": "e128",
+      "distance_m": 0.568,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "1",
+      "source_type": "ramp",
+      "merged_node_id": "n126",
+      "associated_edge_id": "e89",
+      "distance_m": 0.582,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "2",
+      "source_type": "ramp",
+      "merged_node_id": "n127",
+      "associated_edge_id": "e89",
+      "distance_m": 0.895,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "3",
+      "source_type": "ramp",
+      "merged_node_id": "n74",
+      "associated_edge_id": "e166",
+      "distance_m": 0.24,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "4",
+      "source_type": "ramp",
+      "merged_node_id": "n113",
+      "associated_edge_id": "e72",
+      "distance_m": 1.724,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "5",
+      "source_type": "ramp",
+      "merged_node_id": "n170",
+      "associated_edge_id": "e168",
+      "distance_m": 0.331,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "6",
+      "source_type": "ramp",
+      "merged_node_id": "n115",
+      "associated_edge_id": "e75",
+      "distance_m": 0.188,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "7",
+      "source_type": "ramp",
+      "merged_node_id": "n178",
+      "associated_edge_id": "e183",
+      "distance_m": 1.393,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "8",
+      "source_type": "ramp",
+      "merged_node_id": "n69",
+      "associated_edge_id": "e157",
+      "distance_m": 0.599,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "9",
+      "source_type": "ramp",
+      "merged_node_id": "n52",
+      "associated_edge_id": "e160",
+      "distance_m": 2.13,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "10",
+      "source_type": "ramp",
+      "merged_node_id": "n19",
+      "associated_edge_id": "e221",
+      "distance_m": 0.264,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "11",
+      "source_type": "ramp",
+      "merged_node_id": "n55",
+      "associated_edge_id": "e120",
+      "distance_m": 2.734,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "12",
+      "source_type": "ramp",
+      "merged_node_id": "n151",
+      "associated_edge_id": "e138",
+      "distance_m": 2.317,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "14",
+      "source_type": "ramp",
+      "merged_node_id": "n109",
+      "associated_edge_id": "e108",
+      "distance_m": 2.695,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "15",
+      "source_type": "ramp",
+      "merged_node_id": "n121",
+      "associated_edge_id": "e83",
+      "distance_m": 1.102,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "16",
+      "source_type": "ramp",
+      "merged_node_id": "n83",
+      "associated_edge_id": "e230",
+      "distance_m": 2.032,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "17",
+      "source_type": "ramp",
+      "merged_node_id": "n67",
+      "associated_edge_id": "e140",
+      "distance_m": 1.217,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "18",
+      "source_type": "ramp",
+      "merged_node_id": "n133",
+      "associated_edge_id": "e103",
+      "distance_m": 0.575,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "19",
+      "source_type": "ramp",
+      "merged_node_id": "n64",
+      "associated_edge_id": "e138",
+      "distance_m": 2.132,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "20",
+      "source_type": "ramp",
+      "merged_node_id": "n102",
+      "associated_edge_id": "e103",
+      "distance_m": 1.723,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "21",
+      "source_type": "ramp",
+      "merged_node_id": "n112",
+      "associated_edge_id": "e108",
+      "distance_m": 2.197,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "22",
+      "source_type": "ramp",
+      "merged_node_id": "n156",
+      "associated_edge_id": "e147",
+      "distance_m": 0.107,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "23",
+      "source_type": "ramp",
+      "merged_node_id": "n22",
+      "associated_edge_id": "e97",
+      "distance_m": 1.682,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "24",
+      "source_type": "ramp",
+      "merged_node_id": "n163",
+      "associated_edge_id": "e157",
+      "distance_m": 2.199,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "25",
+      "source_type": "ramp",
+      "merged_node_id": "n89",
+      "associated_edge_id": "e121",
+      "distance_m": 0.604,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "26",
+      "source_type": "ramp",
+      "merged_node_id": "n130",
+      "associated_edge_id": "e97",
+      "distance_m": 0.522,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "27",
+      "source_type": "ramp",
+      "merged_node_id": "n122",
+      "associated_edge_id": "e84",
+      "distance_m": 0.339,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "28",
+      "source_type": "ramp",
+      "merged_node_id": "n177",
+      "associated_edge_id": "e183",
+      "distance_m": 1.279,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "29",
+      "source_type": "ramp",
+      "merged_node_id": "n50",
+      "associated_edge_id": "e84",
+      "distance_m": 2.117,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "30",
+      "source_type": "ramp",
+      "merged_node_id": "n116",
+      "associated_edge_id": "e75",
+      "distance_m": 0.608,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "31",
+      "source_type": "ramp",
+      "merged_node_id": "n154",
+      "associated_edge_id": "e142",
+      "distance_m": 0.857,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "34",
+      "source_type": "ramp",
+      "merged_node_id": "n57",
+      "associated_edge_id": "e205",
+      "distance_m": 1.409,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "35",
+      "source_type": "ramp",
+      "merged_node_id": "n91",
+      "associated_edge_id": "e168",
+      "distance_m": 1.21,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "36",
+      "source_type": "ramp",
+      "merged_node_id": "n8",
+      "associated_edge_id": "e188",
+      "distance_m": 0.17,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "37",
+      "source_type": "ramp",
+      "merged_node_id": "n114",
+      "associated_edge_id": "e72",
+      "distance_m": 1.292,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "38",
+      "source_type": "ramp",
+      "merged_node_id": "n13",
+      "associated_edge_id": "e205",
+      "distance_m": 2.461,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "39",
+      "source_type": "ramp",
+      "merged_node_id": "n76",
+      "associated_edge_id": "e212",
+      "distance_m": 1.216,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "40",
+      "source_type": "ramp",
+      "merged_node_id": "n25",
+      "associated_edge_id": "e228",
+      "distance_m": 1.162,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "41",
+      "source_type": "ramp",
+      "merged_node_id": "n179",
+      "associated_edge_id": "e188",
+      "distance_m": 1.592,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "42",
+      "source_type": "ramp",
+      "merged_node_id": "n157",
+      "associated_edge_id": "e147",
+      "distance_m": 1.355,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "43",
+      "source_type": "ramp",
+      "merged_node_id": "n162",
+      "associated_edge_id": "e156",
+      "distance_m": 2.386,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "44",
+      "source_type": "ramp",
+      "merged_node_id": "n189",
+      "associated_edge_id": "e226",
+      "distance_m": 0.761,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "47",
+      "source_type": "ramp",
+      "merged_node_id": "n31",
+      "associated_edge_id": "e140",
+      "distance_m": 0.424,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "49",
+      "source_type": "ramp",
+      "merged_node_id": "n149",
+      "associated_edge_id": "e134",
+      "distance_m": 0.403,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "50",
+      "source_type": "ramp",
+      "merged_node_id": "n169",
+      "associated_edge_id": "e172",
+      "distance_m": 1.023,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "51",
+      "source_type": "ramp",
+      "merged_node_id": "n167",
+      "associated_edge_id": "e226",
+      "distance_m": 0.866,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "52",
+      "source_type": "ramp",
+      "merged_node_id": "n4",
+      "associated_edge_id": "e81",
+      "distance_m": 0.161,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "53",
+      "source_type": "ramp",
+      "merged_node_id": "n153",
+      "associated_edge_id": "e141",
+      "distance_m": 0.554,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "54",
+      "source_type": "ramp",
+      "merged_node_id": "n39",
+      "associated_edge_id": "e166",
+      "distance_m": 1.313,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "56",
+      "source_type": "ramp",
+      "merged_node_id": "n137",
+      "associated_edge_id": "e208",
+      "distance_m": 1.639,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "58",
+      "source_type": "ramp",
+      "merged_node_id": "n61",
+      "associated_edge_id": "e212",
+      "distance_m": 2.001,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "59",
+      "source_type": "ramp",
+      "merged_node_id": "n159",
+      "associated_edge_id": "e152",
+      "distance_m": 0.167,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "61",
+      "source_type": "ramp",
+      "merged_node_id": "n164",
+      "associated_edge_id": "e160",
+      "distance_m": 0.295,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "63",
+      "source_type": "ramp",
+      "merged_node_id": "n38",
+      "associated_edge_id": "e129",
+      "distance_m": 1.395,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "64",
+      "source_type": "ramp",
+      "merged_node_id": "n166",
+      "associated_edge_id": "e222",
+      "distance_m": 1.818,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "65",
+      "source_type": "ramp",
+      "merged_node_id": "n144",
+      "associated_edge_id": "e128",
+      "distance_m": 0.115,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "66",
+      "source_type": "ramp",
+      "merged_node_id": "n44",
+      "associated_edge_id": "e142",
+      "distance_m": 0.23,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "67",
+      "source_type": "ramp",
+      "merged_node_id": "n181",
+      "associated_edge_id": "e208",
+      "distance_m": 2.973,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "68",
+      "source_type": "ramp",
+      "merged_node_id": "n168",
+      "associated_edge_id": "e171",
+      "distance_m": 1.711,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "69",
+      "source_type": "ramp",
+      "merged_node_id": "n42",
+      "associated_edge_id": "e129",
+      "distance_m": 2.333,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "70",
+      "source_type": "ramp",
+      "merged_node_id": "n187",
+      "associated_edge_id": "e221",
+      "distance_m": 0.093,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "71",
+      "source_type": "ramp",
+      "merged_node_id": "n29",
+      "associated_edge_id": "e222",
+      "distance_m": 0.939,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "72",
+      "source_type": "ramp",
+      "merged_node_id": "n129",
+      "associated_edge_id": "e93",
+      "distance_m": 0.565,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "74",
+      "source_type": "ramp",
+      "merged_node_id": "n147",
+      "associated_edge_id": "e135",
+      "distance_m": 1.78,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "75",
+      "source_type": "ramp",
+      "merged_node_id": "n18",
+      "associated_edge_id": "e94",
+      "distance_m": 1.93,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "76",
+      "source_type": "ramp",
+      "merged_node_id": "n150",
+      "associated_edge_id": "e135",
+      "distance_m": 0.509,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "77",
+      "source_type": "ramp",
+      "merged_node_id": "n191",
+      "associated_edge_id": "e230",
+      "distance_m": 0.413,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "78",
+      "source_type": "ramp",
+      "merged_node_id": "n85",
+      "associated_edge_id": "e153",
+      "distance_m": 0.517,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "79",
+      "source_type": "ramp",
+      "merged_node_id": "n173",
+      "associated_edge_id": "e176",
+      "distance_m": 0.632,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "80",
+      "source_type": "ramp",
+      "merged_node_id": "n5",
+      "associated_edge_id": "e219",
+      "distance_m": 2.073,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "81",
+      "source_type": "ramp",
+      "merged_node_id": "n28",
+      "associated_edge_id": null,
+      "distance_m": 1.223,
+      "merge_reason": "nearest_existing_node"
+    },
+    {
+      "source_id": "84",
+      "source_type": "ramp",
+      "merged_node_id": "n152",
+      "associated_edge_id": "e141",
+      "distance_m": 1.397,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "85",
+      "source_type": "ramp",
+      "merged_node_id": "n143",
+      "associated_edge_id": "e121",
+      "distance_m": 0.592,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "86",
+      "source_type": "ramp",
+      "merged_node_id": "n18",
+      "associated_edge_id": "e93",
+      "distance_m": 2.052,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "88",
+      "source_type": "ramp",
+      "merged_node_id": "n138",
+      "associated_edge_id": "e112",
+      "distance_m": 0.844,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "89",
+      "source_type": "ramp",
+      "merged_node_id": "n24",
+      "associated_edge_id": null,
+      "distance_m": 1.857,
+      "merge_reason": "nearest_existing_node"
+    },
+    {
+      "source_id": "90",
+      "source_type": "ramp",
+      "merged_node_id": "n15",
+      "associated_edge_id": "e115",
+      "distance_m": 1.786,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "92",
+      "source_type": "ramp",
+      "merged_node_id": "n171",
+      "associated_edge_id": "e172",
+      "distance_m": 0.155,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "93",
+      "source_type": "ramp",
+      "merged_node_id": "n148",
+      "associated_edge_id": "e134",
+      "distance_m": 0.52,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "94",
+      "source_type": "ramp",
+      "merged_node_id": "n27",
+      "associated_edge_id": "e202",
+      "distance_m": 1.909,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "95",
+      "source_type": "ramp",
+      "merged_node_id": "n37",
+      "associated_edge_id": "e152",
+      "distance_m": 1.785,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "96",
+      "source_type": "ramp",
+      "merged_node_id": "n62",
+      "associated_edge_id": "e171",
+      "distance_m": 1.363,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "97",
+      "source_type": "ramp",
+      "merged_node_id": "n174",
+      "associated_edge_id": "e176",
+      "distance_m": 0.868,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "98",
+      "source_type": "ramp",
+      "merged_node_id": "n190",
+      "associated_edge_id": "e228",
+      "distance_m": 1.166,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "99",
+      "source_type": "ramp",
+      "merged_node_id": "n120",
+      "associated_edge_id": "e81",
+      "distance_m": 0.025,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "100",
+      "source_type": "ramp",
+      "merged_node_id": "n131",
+      "associated_edge_id": "e112",
+      "distance_m": 1.837,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "102",
+      "source_type": "ramp",
+      "merged_node_id": "n56",
+      "associated_edge_id": "e115",
+      "distance_m": 2.73,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "103",
+      "source_type": "ramp",
+      "merged_node_id": "n117",
+      "associated_edge_id": "e77",
+      "distance_m": 0.11,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "104",
+      "source_type": "ramp",
+      "merged_node_id": "n114",
+      "associated_edge_id": "e219",
+      "distance_m": 1.983,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "105",
+      "source_type": "ramp",
+      "merged_node_id": "n68",
+      "associated_edge_id": "e153",
+      "distance_m": 0.792,
+      "merge_reason": "ramp_near_crossing_endpoint"
+    },
+    {
+      "source_id": "106",
+      "source_type": "ramp",
+      "merged_node_id": "n30",
+      "associated_edge_id": null,
+      "distance_m": 1.244,
+      "merge_reason": "nearest_existing_node"
+    },
+    {
+      "source_id": "120",
+      "source_type": "crossing",
+      "merged_node_id": "n117",
+      "associated_edge_id": "e77",
+      "distance_m": 1.905,
+      "merge_reason": "crossing_point_near_crossing_edge"
+    },
+    {
+      "source_id": "122",
+      "source_type": "crossing",
+      "merged_node_id": "n184",
+      "associated_edge_id": "e193",
+      "distance_m": 2.86,
+      "merge_reason": "crossing_point_near_crossing_edge"
+    }
+  ],
+  "crossing_point_auxiliary_records": [
+    {
+      "source_id": "107",
+      "source_type": "crossing",
+      "associated_edge_id": "e183",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.324
+    },
+    {
+      "source_id": "108",
+      "source_type": "crossing",
+      "associated_edge_id": "e75",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.13
+    },
+    {
+      "source_id": "109",
+      "source_type": "crossing",
+      "associated_edge_id": "e157",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.844
+    },
+    {
+      "source_id": "110",
+      "source_type": "crossing",
+      "associated_edge_id": "e72",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.059
+    },
+    {
+      "source_id": "111",
+      "source_type": "crossing",
+      "associated_edge_id": "e161",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.723
+    },
+    {
+      "source_id": "112",
+      "source_type": "crossing",
+      "associated_edge_id": "e134",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.093
+    },
+    {
+      "source_id": "113",
+      "source_type": "crossing",
+      "associated_edge_id": "e224",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.254
+    },
+    {
+      "source_id": "114",
+      "source_type": "crossing",
+      "associated_edge_id": "e138",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.953
+    },
+    {
+      "source_id": "115",
+      "source_type": "crossing",
+      "associated_edge_id": "e219",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.274
+    },
+    {
+      "source_id": "116",
+      "source_type": "crossing",
+      "associated_edge_id": "e140",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.688
+    },
+    {
+      "source_id": "117",
+      "source_type": "crossing",
+      "associated_edge_id": "e135",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.418
+    },
+    {
+      "source_id": "118",
+      "source_type": "crossing",
+      "associated_edge_id": "e168",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.206
+    },
+    {
+      "source_id": "119",
+      "source_type": "crossing",
+      "associated_edge_id": "e84",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.138
+    },
+    {
+      "source_id": "120",
+      "source_type": "crossing",
+      "associated_edge_id": "e77",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "merged_to_existing_node_context",
+      "merge_reason": "crossing_point_near_crossing_edge",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.217
+    },
+    {
+      "source_id": "121",
+      "source_type": "crossing",
+      "associated_edge_id": "e142",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 1.043
+    },
+    {
+      "source_id": "122",
+      "source_type": "crossing",
+      "associated_edge_id": "e193",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "merged_to_existing_node_context",
+      "merge_reason": "crossing_point_near_crossing_edge",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.51
+    },
+    {
+      "source_id": "123",
+      "source_type": "crossing",
+      "associated_edge_id": null,
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": false,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": null,
+      "crossing_point_to_edge_distance_m": null
+    },
+    {
+      "source_id": "124",
+      "source_type": "crossing",
+      "associated_edge_id": "e164",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.254
+    },
+    {
+      "source_id": "125",
+      "source_type": "crossing",
+      "associated_edge_id": "e171",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.626
+    },
+    {
+      "source_id": "126",
+      "source_type": "crossing",
+      "associated_edge_id": "e186",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.119
+    },
+    {
+      "source_id": "127",
+      "source_type": "crossing",
+      "associated_edge_id": "e126",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.456
+    },
+    {
+      "source_id": "128",
+      "source_type": "crossing",
+      "associated_edge_id": "e182",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 1.132
+    },
+    {
+      "source_id": "129",
+      "source_type": "crossing",
+      "associated_edge_id": "e112",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.181
+    },
+    {
+      "source_id": "130",
+      "source_type": "crossing",
+      "associated_edge_id": "e132",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.121
+    },
+    {
+      "source_id": "131",
+      "source_type": "crossing",
+      "associated_edge_id": null,
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": false,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": null,
+      "crossing_point_to_edge_distance_m": null
+    },
+    {
+      "source_id": "132",
+      "source_type": "crossing",
+      "associated_edge_id": "e121",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 1.076
+    },
+    {
+      "source_id": "133",
+      "source_type": "crossing",
+      "associated_edge_id": null,
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": false,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": null,
+      "crossing_point_to_edge_distance_m": null
+    },
+    {
+      "source_id": "134",
+      "source_type": "crossing",
+      "associated_edge_id": "e156",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 1.808
+    },
+    {
+      "source_id": "135",
+      "source_type": "crossing",
+      "associated_edge_id": "e176",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.175
+    },
+    {
+      "source_id": "136",
+      "source_type": "crossing",
+      "associated_edge_id": "e147",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.294
+    },
+    {
+      "source_id": "137",
+      "source_type": "crossing",
+      "associated_edge_id": "e103",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.281
+    },
+    {
+      "source_id": "138",
+      "source_type": "crossing",
+      "associated_edge_id": "e141",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.529
+    },
+    {
+      "source_id": "139",
+      "source_type": "crossing",
+      "associated_edge_id": "e199",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.215
+    },
+    {
+      "source_id": "140",
+      "source_type": "crossing",
+      "associated_edge_id": "e152",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.028
+    },
+    {
+      "source_id": "141",
+      "source_type": "crossing",
+      "associated_edge_id": "e172",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.527
+    },
+    {
+      "source_id": "142",
+      "source_type": "crossing",
+      "associated_edge_id": "e83",
+      "used_as": "crossing_edge_or_node_supporting_evidence",
+      "outcome": "not_emitted_as_final_node",
+      "near_crossing": true,
+      "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+      "crossing_marking_inference": "source_crossing_point_proximity",
+      "crossing_point_to_edge_distance_m": 0.192
+    }
+  ],
+  "crossing_marking_inference": {
+    "source_crossing_point_count": 36,
+    "crossing_points_with_nearby_crossing_edge_count": 33,
+    "crossing_edges_updated_to_painted_count": 33,
+    "updated_crossing_edges": [
+      {
+        "edge_id": "e183",
+        "source_crossing_point_id": "107",
+        "source_crossing_point_ids": [
+          "107"
+        ],
+        "point_to_crossing_edge_distance_m": 0.324,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e75",
+        "source_crossing_point_id": "108",
+        "source_crossing_point_ids": [
+          "108"
+        ],
+        "point_to_crossing_edge_distance_m": 0.13,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e157",
+        "source_crossing_point_id": "109",
+        "source_crossing_point_ids": [
+          "109"
+        ],
+        "point_to_crossing_edge_distance_m": 0.844,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e72",
+        "source_crossing_point_id": "110",
+        "source_crossing_point_ids": [
+          "110"
+        ],
+        "point_to_crossing_edge_distance_m": 0.059,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e161",
+        "source_crossing_point_id": "111",
+        "source_crossing_point_ids": [
+          "111"
+        ],
+        "point_to_crossing_edge_distance_m": 0.723,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e134",
+        "source_crossing_point_id": "112",
+        "source_crossing_point_ids": [
+          "112"
+        ],
+        "point_to_crossing_edge_distance_m": 0.093,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e224",
+        "source_crossing_point_id": "113",
+        "source_crossing_point_ids": [
+          "113"
+        ],
+        "point_to_crossing_edge_distance_m": 0.254,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e138",
+        "source_crossing_point_id": "114",
+        "source_crossing_point_ids": [
+          "114"
+        ],
+        "point_to_crossing_edge_distance_m": 0.953,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e219",
+        "source_crossing_point_id": "115",
+        "source_crossing_point_ids": [
+          "115"
+        ],
+        "point_to_crossing_edge_distance_m": 0.274,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e140",
+        "source_crossing_point_id": "116",
+        "source_crossing_point_ids": [
+          "116"
+        ],
+        "point_to_crossing_edge_distance_m": 0.688,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e135",
+        "source_crossing_point_id": "117",
+        "source_crossing_point_ids": [
+          "117"
+        ],
+        "point_to_crossing_edge_distance_m": 0.418,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e168",
+        "source_crossing_point_id": "118",
+        "source_crossing_point_ids": [
+          "118"
+        ],
+        "point_to_crossing_edge_distance_m": 0.206,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e84",
+        "source_crossing_point_id": "119",
+        "source_crossing_point_ids": [
+          "119"
+        ],
+        "point_to_crossing_edge_distance_m": 0.138,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e77",
+        "source_crossing_point_id": "120",
+        "source_crossing_point_ids": [
+          "120"
+        ],
+        "point_to_crossing_edge_distance_m": 0.217,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e142",
+        "source_crossing_point_id": "121",
+        "source_crossing_point_ids": [
+          "121"
+        ],
+        "point_to_crossing_edge_distance_m": 1.043,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e193",
+        "source_crossing_point_id": "122",
+        "source_crossing_point_ids": [
+          "122"
+        ],
+        "point_to_crossing_edge_distance_m": 0.51,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e164",
+        "source_crossing_point_id": "124",
+        "source_crossing_point_ids": [
+          "124"
+        ],
+        "point_to_crossing_edge_distance_m": 0.254,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e171",
+        "source_crossing_point_id": "125",
+        "source_crossing_point_ids": [
+          "125"
+        ],
+        "point_to_crossing_edge_distance_m": 0.626,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e186",
+        "source_crossing_point_id": "126",
+        "source_crossing_point_ids": [
+          "126"
+        ],
+        "point_to_crossing_edge_distance_m": 0.119,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e126",
+        "source_crossing_point_id": "127",
+        "source_crossing_point_ids": [
+          "127"
+        ],
+        "point_to_crossing_edge_distance_m": 0.456,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e182",
+        "source_crossing_point_id": "128",
+        "source_crossing_point_ids": [
+          "128"
+        ],
+        "point_to_crossing_edge_distance_m": 1.132,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e112",
+        "source_crossing_point_id": "129",
+        "source_crossing_point_ids": [
+          "129"
+        ],
+        "point_to_crossing_edge_distance_m": 0.181,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e132",
+        "source_crossing_point_id": "130",
+        "source_crossing_point_ids": [
+          "130"
+        ],
+        "point_to_crossing_edge_distance_m": 0.121,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e121",
+        "source_crossing_point_id": "132",
+        "source_crossing_point_ids": [
+          "132"
+        ],
+        "point_to_crossing_edge_distance_m": 1.076,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e156",
+        "source_crossing_point_id": "134",
+        "source_crossing_point_ids": [
+          "134"
+        ],
+        "point_to_crossing_edge_distance_m": 1.808,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e176",
+        "source_crossing_point_id": "135",
+        "source_crossing_point_ids": [
+          "135"
+        ],
+        "point_to_crossing_edge_distance_m": 0.175,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e147",
+        "source_crossing_point_id": "136",
+        "source_crossing_point_ids": [
+          "136"
+        ],
+        "point_to_crossing_edge_distance_m": 0.294,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e103",
+        "source_crossing_point_id": "137",
+        "source_crossing_point_ids": [
+          "137"
+        ],
+        "point_to_crossing_edge_distance_m": 0.281,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e141",
+        "source_crossing_point_id": "138",
+        "source_crossing_point_ids": [
+          "138"
+        ],
+        "point_to_crossing_edge_distance_m": 0.529,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e199",
+        "source_crossing_point_id": "139",
+        "source_crossing_point_ids": [
+          "139"
+        ],
+        "point_to_crossing_edge_distance_m": 0.215,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e152",
+        "source_crossing_point_id": "140",
+        "source_crossing_point_ids": [
+          "140"
+        ],
+        "point_to_crossing_edge_distance_m": 0.028,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e172",
+        "source_crossing_point_id": "141",
+        "source_crossing_point_ids": [
+          "141"
+        ],
+        "point_to_crossing_edge_distance_m": 0.527,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      },
+      {
+        "edge_id": "e83",
+        "source_crossing_point_id": "142",
+        "source_crossing_point_ids": [
+          "142"
+        ],
+        "point_to_crossing_edge_distance_m": 0.192,
+        "previous_crossing_marking": "other",
+        "new_crossing_marking": "painted",
+        "crossing_marking_inference": "source_crossing_point_proximity",
+        "crossing_marking_updated_to": "painted",
+        "inference_method": "source_crossing_point_proximity"
+      }
+    ],
+    "crossing_points_without_nearby_crossing_edge_count": 3
+  },
+  "upgraded_curb_ramp_nodes": [
+    {
+      "source_id": "13",
+      "new_node_id": "n193",
+      "associated_edge_id": "e14",
+      "crossing_relation_status": "unresolved",
+      "upgrade_reason": "clear_ramp_transition_point_in_pedestrian_network_context"
+    },
+    {
+      "source_id": "33",
+      "new_node_id": "n195",
+      "associated_edge_id": "e45",
+      "crossing_relation_status": "unresolved",
+      "upgrade_reason": "clear_ramp_transition_point_in_pedestrian_network_context"
+    },
+    {
+      "source_id": "45",
+      "new_node_id": "n196",
+      "associated_edge_id": "e182",
+      "crossing_relation_status": "partial",
+      "upgrade_reason": "near_crossing_context_without_stable_endpoint_merge"
+    },
+    {
+      "source_id": "46",
+      "new_node_id": "n197",
+      "associated_edge_id": "e202",
+      "crossing_relation_status": "partial",
+      "upgrade_reason": "near_crossing_context_without_stable_endpoint_merge"
+    },
+    {
+      "source_id": "48",
+      "new_node_id": "n198",
+      "associated_edge_id": "e161",
+      "crossing_relation_status": "partial",
+      "upgrade_reason": "near_crossing_context_without_stable_endpoint_merge"
+    },
+    {
+      "source_id": "60",
+      "new_node_id": "n201",
+      "associated_edge_id": "e83",
+      "crossing_relation_status": "partial",
+      "upgrade_reason": "near_crossing_context_without_stable_endpoint_merge"
+    },
+    {
+      "source_id": "62",
+      "new_node_id": "n202",
+      "associated_edge_id": "e15",
+      "crossing_relation_status": "unresolved",
+      "upgrade_reason": "clear_ramp_transition_point_in_pedestrian_network_context"
+    },
+    {
+      "source_id": "82",
+      "new_node_id": "n204",
+      "associated_edge_id": "e120",
+      "crossing_relation_status": "partial",
+      "upgrade_reason": "near_crossing_context_without_stable_endpoint_merge"
+    },
+    {
+      "source_id": "83",
+      "new_node_id": "n205",
+      "associated_edge_id": "e59",
+      "crossing_relation_status": "unresolved",
+      "upgrade_reason": "clear_ramp_transition_point_in_pedestrian_network_context"
+    },
+    {
+      "source_id": "87",
+      "new_node_id": "n206",
+      "associated_edge_id": "e14",
+      "crossing_relation_status": "unresolved",
+      "upgrade_reason": "clear_ramp_transition_point_in_pedestrian_network_context"
+    },
+    {
+      "source_id": "101",
+      "new_node_id": "n208",
+      "associated_edge_id": "e16",
+      "crossing_relation_status": "unresolved",
+      "upgrade_reason": "clear_ramp_transition_point_in_pedestrian_network_context"
+    }
+  ],
+  "skipped_features": [],
+  "input_files": {
+    "network": "Fairfield_footpath_network_data 1.geojson",
+    "polygons": "Fairfield_footpath_polygon_data.geojson",
+    "points": "Fairfield_objects_on_footpath_point_data.geojson"
+  },
+  "output": {
+    "feature_count": 1450,
+    "feature_role_counts": {
+      "Node": 208,
+      "Edge": 233,
+      "Zone": 162,
+      "Object": 847
+    },
+    "node_count": 208,
+    "edge_count": 233,
+    "zone_count": 162,
+    "object_count": 847,
+    "node_subtype_counts": {
+      "curb_ramp_node": 144,
+      "intersection": 24,
+      "other": 38,
+      "dead_end": 2
+    }
+  },
+  "validation": {
+    "validator_available": true,
+    "error_count": 0,
+    "errors": [],
+    "passed": true,
+    "status": "passed"
+  },
+  "skipped_feature_count": 0
+}
