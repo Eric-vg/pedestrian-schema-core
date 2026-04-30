@@ -194,17 +194,9 @@
           "type": "string",
           "description": "Human-readable name of the feature."
         },
-        "level": {
-          "type": "integer",
-          "description": "Vertical level or floor index of the feature."
-        },
-        "indoor": {
+        "weather_protected": {
           "type": "boolean",
-          "description": "Whether the feature is located indoors."
-        },
-        "accessible": {
-          "type": "boolean",
-          "description": "Whether the feature is generally accessible for pedestrian use. This field does not necessarily imply wheelchair accessibility."
+          "description": "Whether the feature has cover or protection that supports use during unfavorable weather conditions."
         },
         "source": {
           "type": "string",
@@ -298,18 +290,9 @@
               ],
               "description": "Optional supplemental field indicating this node's endpoint position relative to an associated `ramp` or `curbramp` edge. It should be understood as a relational qualifier rather than as part of the node's primary semantic type, and it does not replace `node_type`."
             },
-            "waiting_time_s": {
-              "type": "number",
-              "minimum": 0,
-              "description": "Estimated pedestrian waiting time at the node in seconds, if relevant."
-            },
             "has_seating": {
               "type": "boolean",
               "description": "Whether seating is available at or near this node."
-            },
-            "has_shelter": {
-              "type": "boolean",
-              "description": "Whether shelter is available at or near this node."
             },
             "connected_edge_count": {
               "type": "integer",
@@ -330,15 +313,10 @@
                 }
               },
               "additionalProperties": false
-            },
-            "landmark_type": {
-              "type": "string",
-              "description": "Optional landmark or reference type associated with the node."
             }
           },
           "required": [
-            "node_type",
-            "connected_edge_count"
+            "node_type"
           ]
         }
       ]
@@ -435,10 +413,6 @@
               "type": "boolean",
               "description": "Whether the edge is lit."
             },
-            "has_cover": {
-              "type": "boolean",
-              "description": "Whether the edge is covered or sheltered."
-            },
             "wheelchair_accessible": {
               "type": "boolean",
               "description": "Whether the edge is considered suitable for wheelchair access based on the available data."
@@ -487,10 +461,6 @@
                 "other"
               ],
               "description": "Access control condition associated with the edge. For an entrance edge, this describes control at the boundary access interface rather than along a general pedestrian approach path."
-            },
-            "weather_protected": {
-              "type": "boolean",
-              "description": "Whether the edge is protected from weather exposure."
             }
           },
           "required": [
@@ -549,14 +519,6 @@
                 }
               ],
               "description": "Surface material of the zone."
-            },
-            "function": {
-              "type": "string",
-              "description": "Functional description of the zone, such as waiting, circulation, or entrance-related use."
-            },
-            "covered": {
-              "type": "boolean",
-              "description": "Whether the zone is covered or sheltered."
             },
             "has_seating": {
               "type": "boolean",
@@ -1071,7 +1033,6 @@
           },
           "then": {
             "required": [
-              "function",
               "shared_users"
             ]
           }
@@ -1089,7 +1050,6 @@
           },
           "then": {
             "required": [
-              "function",
               "island_role"
             ]
           }

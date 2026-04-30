@@ -267,6 +267,7 @@ def run_node_classification_checks(
     subtype_counts: collections.Counter[str] = collections.Counter()
     origin_counts: collections.Counter[str] = collections.Counter()
     origin_subtype_counts: collections.Counter[str] = collections.Counter()
+    inference_counts: collections.Counter[str] = collections.Counter()
     missing_node_origin = []
 
     for node_id, feature in nodes.items():
@@ -275,6 +276,7 @@ def run_node_classification_checks(
         parsed_notes = parse_notes_kv(notes)
         node_type = properties.get("node_type")
         node_origin = parsed_notes.get("node_origin")
+        inference_method = parsed_notes.get("inference_method")
 
         if node_type is not None:
             subtype_counts[node_type] += 1
@@ -282,6 +284,8 @@ def run_node_classification_checks(
             origin_counts[node_origin] += 1
             if node_type is not None:
                 origin_subtype_counts[f"{node_origin}_{node_type}"] += 1
+        if inference_method is not None:
+            inference_counts[inference_method] += 1
         else:
             item = {"node_id": node_id, "node_type": node_type, "notes": notes}
             missing_node_origin.append(item)
@@ -300,10 +304,23 @@ def run_node_classification_checks(
         "topology_derived_intersection_count": origin_subtype_counts.get("topology_derived_intersection", 0),
         "topology_derived_curb_ramp_node_count": origin_subtype_counts.get("topology_derived_curb_ramp_node", 0),
         "topology_derived_dead_end_count": origin_subtype_counts.get("topology_derived_dead_end", 0),
+        "topology_derived_other_count": origin_subtype_counts.get("topology_derived_other", 0),
+        "topology_derived_two_edge_connection_count": inference_counts.get(
+            "topology_two_edge_connection_classification", 0
+        ),
+        "topology_derived_non_path_multiedge_count": inference_counts.get(
+            "topology_non_path_multiedge_classification", 0
+        ),
         "source_point_derived_curb_ramp_node_count": origin_subtype_counts.get(
             "source_point_derived_curb_ramp_node", 0
         ),
         "source_point_derived_other_count": origin_subtype_counts.get("source_point_derived_other", 0),
+        "node_classification_interpretation": (
+            "Topology-derived intersections are interpreted conservatively as multi-edge pedestrian "
+            "path junctions. Ordinary two-edge topology connections are retained as other nodes rather "
+            "than intersections to avoid over-interpreting source segmentation points or simple path bends. "
+            "Crossing-path transition nodes remain classified as curb_ramp_node."
+        ),
     }
 
 
@@ -371,9 +388,12 @@ def run_placeholder_node_checks(
     nodes: dict[str, dict[str, Any]],
     warnings: list[dict[str, Any]],
 ) -> dict[str, Any]:
+    source_point_placeholders = []
     ramp_placeholders = []
-    other_placeholders = []
     legacy_crossing_placeholders = []
+    topology_two_edge_connection_others = []
+    topology_non_path_multiedge_others = []
+    unexpected_other_nodes = []
 
     for node_id, feature in nodes.items():
         properties = feature["properties"]
@@ -381,7 +401,9 @@ def run_placeholder_node_checks(
             continue
         notes = properties.get("notes", "")
         parsed_notes = parse_notes_kv(notes)
+        node_origin = parsed_notes.get("node_origin")
         source_type = parsed_notes.get("source_type")
+        inference_method = parsed_notes.get("inference_method")
         if source_type is None:
             if "source_type=ramp" in notes:
                 source_type = "ramp"
@@ -393,40 +415,80 @@ def run_placeholder_node_checks(
             "notes": notes,
             "source_type": source_type,
             "associated_edge_id": parsed_notes.get("associated_edge_id"),
-            "inference_method": parsed_notes.get("inference_method"),
+            "node_origin": node_origin,
+            "inference_method": inference_method,
             "connected_edge_count_semantics": parsed_notes.get("connected_edge_count_semantics"),
         }
-        if parsed_notes.get("connected_edge_count_semantics") == "schema_minimum_placeholder_not_confirmed_topology":
+
+        if node_origin == "source_point_derived":
+            source_point_placeholders.append(item)
+            if parsed_notes.get("connected_edge_count_semantics") == "schema_minimum_placeholder_not_confirmed_topology":
+                warnings.append(
+                    {
+                        "type": "placeholder_connected_edge_count_semantics",
+                        "node_id": node_id,
+                        "source_type": source_type,
+                        "connected_edge_count": properties.get("connected_edge_count"),
+                        "connected_edge_count_semantics": parsed_notes.get("connected_edge_count_semantics"),
+                    }
+                )
+            if source_type == "ramp":
+                ramp_placeholders.append(item)
+            elif source_type == "crossing":
+                legacy_crossing_placeholders.append(item)
+        elif (
+            node_origin == "topology_derived"
+            and inference_method == "topology_two_edge_connection_classification"
+        ):
+            topology_two_edge_connection_others.append(item)
+        elif (
+            node_origin == "topology_derived"
+            and inference_method == "topology_non_path_multiedge_classification"
+        ):
+            topology_non_path_multiedge_others.append(item)
+        else:
+            unexpected_other_nodes.append(item)
             warnings.append(
                 {
-                    "type": "placeholder_connected_edge_count_semantics",
+                    "type": "unexpected_other_node_interpretation",
                     "node_id": node_id,
+                    "node_origin": node_origin,
                     "source_type": source_type,
-                    "connected_edge_count": properties.get("connected_edge_count"),
-                    "connected_edge_count_semantics": parsed_notes.get("connected_edge_count_semantics"),
+                    "inference_method": inference_method,
+                    "notes": notes,
                 }
             )
-        if source_type == "ramp":
-            ramp_placeholders.append(item)
-        elif source_type == "crossing":
-            legacy_crossing_placeholders.append(item)
-        else:
-            other_placeholders.append(item)
 
     return {
-        "other_node_count": len(ramp_placeholders) + len(other_placeholders) + len(legacy_crossing_placeholders),
+        "other_node_count": (
+            len(source_point_placeholders)
+            + len(topology_two_edge_connection_others)
+            + len(topology_non_path_multiedge_others)
+            + len(unexpected_other_nodes)
+        ),
         "ramp_placeholder_count": len(ramp_placeholders),
-        "remaining_other_node_count": len(other_placeholders),
+        "source_point_placeholder_other_count": len(source_point_placeholders),
+        "topology_two_edge_connection_other_count": len(topology_two_edge_connection_others),
+        "topology_non_path_multiedge_other_count": len(topology_non_path_multiedge_others),
+        "unexpected_other_node_count": len(unexpected_other_nodes),
         "legacy_crossing_placeholder_count": len(legacy_crossing_placeholders),
         "crossing_origin_placeholder_expected_count": 0,
         "crossing_origin_placeholder_interpretation": (
             "Crossing-origin placeholder nodes are no longer expected output in the "
             "current Fairfield conversion flow. A count of 0 is the expected outcome."
         ),
-        "other_other_node_count": len(other_placeholders),
+        "node_classification_interpretation": (
+            "Source-point-derived other nodes may still represent conservative placeholder nodes. "
+            "Topology-derived other nodes classified via topology_two_edge_connection_classification "
+            "or topology_non_path_multiedge_classification are treated as deliberate conservative "
+            "topology outcomes rather than placeholder warnings."
+        ),
         "ramp_placeholders": ramp_placeholders,
+        "source_point_placeholders": source_point_placeholders,
         "legacy_crossing_placeholders": legacy_crossing_placeholders,
-        "other_nodes": other_placeholders,
+        "topology_two_edge_connection_others": topology_two_edge_connection_others,
+        "topology_non_path_multiedge_others": topology_non_path_multiedge_others,
+        "unexpected_other_nodes": unexpected_other_nodes,
     }
 
 
@@ -534,6 +596,62 @@ def run_curb_ramp_node_checks(
         "missing_source_type_count": len(missing_source_type),
         "point_derived_curb_ramp_nodes": point_derived_curb_ramp_nodes,
         "warnings": local_warnings,
+    }
+
+
+def run_crossing_marking_checks(
+    edges: dict[str, dict[str, Any]],
+    warnings: list[dict[str, Any]],
+) -> dict[str, Any]:
+    crossing_edges = []
+    painted_crossing_edges = []
+    other_marking_crossing_edges = []
+    missing_crossing_marking = []
+    unexpected_crossing_traffic_control = []
+
+    for edge_id, feature in edges.items():
+        properties = feature["properties"]
+        if properties.get("edge_type") != "crossing":
+            continue
+
+        item = {
+            "edge_id": edge_id,
+            "traffic_control": properties.get("traffic_control"),
+            "crossing_marking": properties.get("crossing_marking"),
+            "notes": properties.get("notes"),
+        }
+        crossing_edges.append(item)
+
+        if properties.get("crossing_marking") == "painted":
+            painted_crossing_edges.append(item)
+        elif properties.get("crossing_marking") == "other":
+            other_marking_crossing_edges.append(item)
+        elif properties.get("crossing_marking") is None:
+            missing_crossing_marking.append(item)
+            warnings.append({"type": "crossing_edge_missing_crossing_marking", **item})
+
+        if properties.get("traffic_control") != "other":
+            unexpected_crossing_traffic_control.append(item)
+            warnings.append({"type": "unexpected_crossing_traffic_control", **item})
+
+    return {
+        "crossing_edge_count": len(crossing_edges),
+        "painted_crossing_edge_count": len(painted_crossing_edges),
+        "other_crossing_marking_count": len(other_marking_crossing_edges),
+        "missing_crossing_marking_count": len(missing_crossing_marking),
+        "unexpected_crossing_traffic_control_count": len(unexpected_crossing_traffic_control),
+        "painted_crossing_edges": painted_crossing_edges,
+        "other_marking_crossing_edges": other_marking_crossing_edges,
+        "missing_crossing_marking_edges": missing_crossing_marking,
+        "unexpected_crossing_traffic_control_edges": unexpected_crossing_traffic_control,
+        "crossing_marking_interpretation": (
+            "Crossing points are retained as auxiliary evidence rather than emitted as final Node or Object "
+            "features. When a crossing point can be matched to a nearby crossing edge in the conversion "
+            "workflow, that edge may be conservatively refined from crossing_marking=other to "
+            "crossing_marking=painted. Crossing edges that remain crossing_marking=other should be interpreted "
+            "as not having received sufficient point-based support for painted marking inference, rather than as "
+            "proof that they are unmarked."
+        ),
     }
 
 
@@ -661,6 +779,7 @@ def build_summary(
     errors: list[dict[str, Any]],
     node_classification_checks: dict[str, Any],
     ramp_node_outcome_checks: dict[str, Any],
+    crossing_marking_checks: dict[str, Any],
 ) -> dict[str, Any]:
     features = dataset.get("features") or []
     return {
@@ -669,14 +788,25 @@ def build_summary(
         "schema_version": dataset.get("schema_version"),
         "feature_count": len(features),
         "feature_role_counts": role_counts,
+        "topology_derived_intersection_count": node_classification_checks["topology_derived_intersection_count"],
         "topology_derived_curb_ramp_node_count": node_classification_checks["topology_derived_curb_ramp_node_count"],
+        "topology_derived_dead_end_count": node_classification_checks["topology_derived_dead_end_count"],
+        "topology_derived_other_count": node_classification_checks["topology_derived_other_count"],
+        "topology_derived_two_edge_connection_count": node_classification_checks[
+            "topology_derived_two_edge_connection_count"
+        ],
+        "topology_derived_non_path_multiedge_count": node_classification_checks[
+            "topology_derived_non_path_multiedge_count"
+        ],
         "source_point_derived_curb_ramp_node_count": node_classification_checks[
             "source_point_derived_curb_ramp_node_count"
         ],
-        "topology_derived_intersection_count": node_classification_checks["topology_derived_intersection_count"],
         "source_point_derived_other_count": node_classification_checks["source_point_derived_other_count"],
         "ramp_origin_curb_ramp_node_count": ramp_node_outcome_checks["ramp_origin_curb_ramp_node_count"],
         "ramp_origin_placeholder_count": ramp_node_outcome_checks["ramp_origin_placeholder_count"],
+        "crossing_edge_count": crossing_marking_checks["crossing_edge_count"],
+        "painted_crossing_edge_count": crossing_marking_checks["painted_crossing_edge_count"],
+        "other_crossing_marking_count": crossing_marking_checks["other_crossing_marking_count"],
         "warning_count": len(warnings),
         "error_count": len(errors),
     }
@@ -715,6 +845,7 @@ def main() -> None:
     placeholder_node_checks = run_placeholder_node_checks(by_role["Node"], warnings)
     ramp_node_outcome_checks = run_ramp_node_outcome_checks(by_role["Node"])
     curb_ramp_node_checks = run_curb_ramp_node_checks(by_role["Node"], warnings)
+    crossing_marking_checks = run_crossing_marking_checks(by_role["Edge"], warnings)
     edge_length_checks = run_edge_length_checks(
         by_role["Edge"],
         args.edge_length_diff_threshold,
@@ -737,6 +868,7 @@ def main() -> None:
             errors,
             node_classification_checks,
             ramp_node_outcome_checks,
+            crossing_marking_checks,
         ),
         "schema_validation": schema_validation,
         "reference_checks": reference_checks,
@@ -746,6 +878,7 @@ def main() -> None:
         "ramp_node_outcome_checks": ramp_node_outcome_checks,
         "curb_ramp_node_checks": curb_ramp_node_checks,
         "placeholder_node_checks": placeholder_node_checks,
+        "crossing_marking_checks": crossing_marking_checks,
         "edge_length_checks": edge_length_checks,
         "object_anchor_checks": object_anchor_checks,
         "warnings": warnings,

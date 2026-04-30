@@ -291,10 +291,26 @@ def classify_topology_node(
             "resolved",
         )
 
+    if connected_edge_count == 2:
+        return (
+            "other",
+            "topology_two_edge_connection_classification",
+            "two_edge_connection_not_treated_as_intersection",
+            None,
+        )
+
+    if connected_edge_count >= 3 and has_path:
+        return (
+            "intersection",
+            "topology_intersection_classification",
+            "multi_edge_path_connection",
+            None,
+        )
+
     return (
-        "intersection",
-        "topology_intersection_classification",
-        "ordinary_path_connection_without_explicit_curb_transition_signal",
+        "other",
+        "topology_non_path_multiedge_classification",
+        "multi_edge_connection_without_pedestrian_path_not_treated_as_intersection",
         None,
     )
 
@@ -935,15 +951,21 @@ def convert_point_features(
     mapping_counts = report["mapping_counts"]
     conservative = report["conservative_mappings"]
     node_classification_summary = report["node_classification_summary"]
+    crossing_marking_inference = report["crossing_marking_inference"]
     node_coords_by_id = {
         feature["properties"]["id"]: feature["geometry"]["coordinates"] for feature in node_features
     }
+    edge_by_id = {feature["properties"]["id"]: feature for feature in edge_features}
+    crossing_marking_updates_by_edge: dict[str, dict[str, Any]] = {}
 
     for feature in point_features:
         props = feature.get("properties") or {}
         source_type = normalize_source_type(props.get("type"))
         source_id = normalize_source_id(props.get("id"))
         point = [float(feature["geometry"]["coordinates"][0]), float(feature["geometry"]["coordinates"][1])]
+
+        if source_type == "crossing":
+            crossing_marking_inference["source_crossing_point_count"] += 1
 
         if source_type in OBJECT_TYPE_MAP:
             object_type = OBJECT_TYPE_MAP[source_type]
@@ -998,6 +1020,38 @@ def convert_point_features(
             endpoint_node_distance = crossing_context["endpoint_node_distance_m"] if crossing_context else None
             near_crossing = crossing_context is not None
 
+            if source_type == "crossing":
+                if crossing_context is not None:
+                    crossing_marking_inference["crossing_points_with_nearby_crossing_edge_count"] += 1
+                    edge_feature = edge_by_id.get(associated_edge_id)
+                    if edge_feature is not None and edge_feature["properties"].get("edge_type") == "crossing":
+                        edge_properties = edge_feature["properties"]
+                        previous_crossing_marking = edge_properties.get("crossing_marking")
+                        update_record = crossing_marking_updates_by_edge.get(associated_edge_id)
+                        if update_record is None:
+                            update_record = {
+                                "edge_id": associated_edge_id,
+                                "source_crossing_point_ids": [],
+                                "point_to_crossing_edge_distance_m": round(crossing_context["edge_distance_m"], 3),
+                                "previous_crossing_marking": previous_crossing_marking,
+                                "new_crossing_marking": edge_properties.get("crossing_marking"),
+                                "inference_method": "source_crossing_point_proximity",
+                            }
+                            crossing_marking_updates_by_edge[associated_edge_id] = update_record
+                        if source_id is not None and source_id not in update_record["source_crossing_point_ids"]:
+                            update_record["source_crossing_point_ids"].append(source_id)
+                        update_record["point_to_crossing_edge_distance_m"] = min(
+                            update_record["point_to_crossing_edge_distance_m"],
+                            round(crossing_context["edge_distance_m"], 3),
+                        )
+                        if previous_crossing_marking == "other":
+                            edge_properties["crossing_marking"] = "painted"
+                            update_record["new_crossing_marking"] = "painted"
+                        else:
+                            update_record["new_crossing_marking"] = edge_properties.get("crossing_marking")
+                else:
+                    crossing_marking_inference["crossing_points_without_nearby_crossing_edge_count"] += 1
+
             if (
                 source_type == "ramp"
                 and endpoint_node_id is not None
@@ -1043,6 +1097,10 @@ def convert_point_features(
                         "used_as": "crossing_edge_or_node_supporting_evidence",
                         "outcome": "merged_to_existing_node_context",
                         "merge_reason": "crossing_point_near_crossing_edge",
+                        "crossing_marking_inference": "source_crossing_point_proximity",
+                        "crossing_point_to_edge_distance_m": round(crossing_context["edge_distance_m"], 3)
+                        if crossing_context is not None
+                        else None,
                     }
                 )
                 continue
@@ -1071,6 +1129,10 @@ def convert_point_features(
                             "used_as": "crossing_edge_or_node_supporting_evidence",
                             "outcome": "nearest_existing_node_context",
                             "merge_reason": "nearest_existing_node",
+                            "crossing_marking_inference": "source_crossing_point_proximity",
+                            "crossing_point_to_edge_distance_m": round(crossing_context["edge_distance_m"], 3)
+                            if crossing_context is not None
+                            else None,
                         }
                     )
                 continue
@@ -1153,6 +1215,10 @@ def convert_point_features(
                         "outcome": "not_emitted_as_final_node",
                         "near_crossing": near_crossing,
                         "reason": "crossing_point_retained_as_auxiliary_evidence_only",
+                        "crossing_marking_inference": "source_crossing_point_proximity" if near_crossing else None,
+                        "crossing_point_to_edge_distance_m": round(crossing_context["edge_distance_m"], 3)
+                        if crossing_context is not None
+                        else None,
                     }
                 )
                 continue
@@ -1196,6 +1262,27 @@ def convert_point_features(
                 "reason": f"unsupported point type: {source_type}",
             }
         )
+
+    updated_crossing_edges = []
+    for update_record in crossing_marking_updates_by_edge.values():
+        source_ids = update_record["source_crossing_point_ids"]
+        updated_crossing_edges.append(
+            {
+                "edge_id": update_record["edge_id"],
+                "source_crossing_point_id": source_ids[0] if len(source_ids) == 1 else None,
+                "source_crossing_point_ids": source_ids,
+                "point_to_crossing_edge_distance_m": update_record["point_to_crossing_edge_distance_m"],
+                "previous_crossing_marking": update_record["previous_crossing_marking"],
+                "new_crossing_marking": update_record["new_crossing_marking"],
+                "crossing_marking_inference": "source_crossing_point_proximity",
+                "crossing_marking_updated_to": update_record["new_crossing_marking"],
+                "inference_method": update_record["inference_method"],
+            }
+        )
+    crossing_marking_inference["crossing_edges_updated_to_painted_count"] = sum(
+        1 for item in updated_crossing_edges if item["previous_crossing_marking"] == "other" and item["new_crossing_marking"] == "painted"
+    )
+    crossing_marking_inference["updated_crossing_edges"] = updated_crossing_edges
 
     return point_node_features, object_features
 
@@ -1314,6 +1401,13 @@ def initial_report(
         "polygon_edge_binding_review": [],
         "merged_point_placeholders": [],
         "crossing_point_auxiliary_records": [],
+        "crossing_marking_inference": {
+            "source_crossing_point_count": 0,
+            "crossing_points_with_nearby_crossing_edge_count": 0,
+            "crossing_edges_updated_to_painted_count": 0,
+            "updated_crossing_edges": [],
+            "crossing_points_without_nearby_crossing_edge_count": 0,
+        },
         "upgraded_curb_ramp_nodes": [],
         "skipped_features": [],
     }
